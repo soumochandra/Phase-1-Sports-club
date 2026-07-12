@@ -1,0 +1,69 @@
+Problems I Faced During Development
+React Blank Page
+
+During frontend development, the application displayed a blank page.
+
+After checking the browser console, I found that a utility file used by the registration form was missing required exported functions.
+
+I added the age and age-group calculation logic and corrected the exports. After rebuilding the client, the application rendered normally.
+
+Firebase Authentication Import Issue
+
+The frontend crashed because the Firebase authentication configuration was missing the required getAuth import.
+
+I corrected the Firebase configuration and initialized authentication properly.
+
+Firebase Admin SDK Setup
+
+While configuring the backend, I faced an issue with Firebase Admin SDK initialization.
+
+The Firebase Admin setup was corrected and the service account credentials were moved to environment variables.
+
+Admin Middleware Error
+
+The Express server failed while registering the admin routes because the authentication middleware was not exporting a valid middleware function.
+
+I rewrote the middleware to verify the Firebase Bearer token, check admin access and continue the request using next().
+
+Database Change
+
+The initial database setup was planned using a relational database.
+
+During development, I moved the Phase 1 data layer to Firebase Firestore to simplify the development workflow and manage athlete records using Firebase services.
+
+What I Learned
+
+This project helped me understand:
+
+Building multi-step React forms
+Managing form state
+Client-side validation
+Handling file uploads
+Working with FormData
+Creating REST APIs using Express
+Firebase Firestore integration
+Firebase Authentication
+Firebase Admin SDK
+Protected backend routes
+Role-based admin verification
+Debugging React runtime errors
+Debugging Express middleware
+CSV data export
+Future Improvements
+
+The following features can be added in future phases:
+
+Payment gateway integration
+Email notifications
+Athlete login
+Coach dashboard
+Club management
+Competition scheduling
+Payment status tracking
+Advanced dashboard analytics
+Cloud-based document storage
+Developer
+
+Developed by Soumo
+
+B.Tech Computer Science and Engineering

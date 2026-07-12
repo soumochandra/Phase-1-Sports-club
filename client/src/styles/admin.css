@@ -1,0 +1,1921 @@
+/* =========================================================
+   ADMIN GLOBAL
+========================================================= */
+
+.admin-login-page,
+.admin-dashboard-page {
+  width: 100%;
+  min-height: calc(100vh - 88px);
+  box-sizing: border-box;
+  color: #f8fafc;
+
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(124, 58, 237, 0.17),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 5% 10%,
+      rgba(37, 99, 235, 0.15),
+      transparent 30%
+    ),
+    #020817;
+}
+
+
+/* =========================================================
+   ADMIN LOGIN PAGE
+========================================================= */
+
+.admin-login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 70px 24px;
+}
+
+.admin-login-card {
+  width: 100%;
+  max-width: 550px;
+  box-sizing: border-box;
+
+  padding: 48px 50px;
+
+  background: rgba(15, 29, 51, 0.95);
+
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 28px;
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.4),
+    0 0 60px rgba(59, 130, 246, 0.06);
+
+  animation: adminFadeUp 0.7s ease;
+}
+
+.admin-login-icon {
+  width: 76px;
+  height: 76px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 32px;
+
+  border-radius: 22px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #3b82f6,
+      #7c3aed
+    );
+
+  box-shadow:
+    0 18px 40px rgba(99, 102, 241, 0.3);
+}
+
+.admin-login-card .registration-label {
+  display: block;
+
+  margin-bottom: 26px;
+
+  color: #60a5fa;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  letter-spacing: 4px;
+}
+
+.admin-login-card h1 {
+  margin: 0 0 14px;
+
+  color: #f8fafc;
+
+  font-size: clamp(38px, 5vw, 48px);
+  font-weight: 800;
+
+  line-height: 1.1;
+}
+
+.admin-login-description {
+  margin: 0 0 34px;
+
+  color: #94a3b8;
+
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   LOGIN ERROR
+========================================================= */
+
+.admin-login-error,
+.admin-error {
+  width: 100%;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 14px 16px;
+  margin-bottom: 20px;
+
+  border:
+    1px solid rgba(248, 113, 113, 0.4);
+
+  border-radius: 12px;
+
+  background:
+    rgba(127, 29, 29, 0.2);
+
+  color: #fca5a5;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   LOGIN FORM
+========================================================= */
+
+.admin-login-card form {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.admin-input-group {
+  position: relative;
+
+  width: 100%;
+}
+
+.admin-input-group > svg {
+  position: absolute;
+
+  left: 18px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #64748b;
+
+  pointer-events: none;
+
+  z-index: 2;
+}
+
+.admin-input-group input {
+  display: block;
+
+  width: 100%;
+  height: 58px;
+
+  box-sizing: border-box;
+
+  padding:
+    0
+    18px
+    0
+    54px;
+
+  border:
+    1px solid rgba(148, 163, 184, 0.2);
+
+  border-radius: 14px;
+
+  outline: none;
+
+  background:
+    rgba(30, 41, 59, 0.8);
+
+  color: #f8fafc;
+
+  font-size: 16px;
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+.admin-input-group input::placeholder {
+  color: #64748b;
+}
+
+.admin-input-group input:focus {
+  border-color: #3b82f6;
+
+  background:
+    rgba(30, 41, 59, 1);
+
+  box-shadow:
+    0 0 0 4px rgba(59, 130, 246, 0.12);
+}
+
+
+/* =========================================================
+   LOGIN BUTTON
+========================================================= */
+
+.admin-login-button {
+  width: 100%;
+  height: 58px;
+
+  box-sizing: border-box;
+
+  border: none;
+  border-radius: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 11px;
+
+  cursor: pointer;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #3b82f6
+    );
+
+  color: #ffffff;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  box-shadow:
+    0 15px 35px rgba(37, 99, 235, 0.25);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.admin-login-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 20px 45px rgba(37, 99, 235, 0.35);
+}
+
+.admin-login-button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.admin-login-button:disabled {
+  opacity: 0.65;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   SECURITY NOTE
+========================================================= */
+
+.admin-security-note {
+  margin-top: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   DASHBOARD
+========================================================= */
+
+.admin-dashboard-page {
+  padding: 65px 8%;
+}
+
+.admin-dashboard-container {
+  width: 100%;
+  max-width: 1450px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   DASHBOARD HEADER
+========================================================= */
+
+.admin-dashboard-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  margin-bottom: 42px;
+}
+
+.admin-dashboard-header .registration-label {
+  display: block;
+
+  color: #60a5fa;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  letter-spacing: 3px;
+
+  margin-bottom: 26px;
+}
+
+.admin-dashboard-header h1 {
+  margin: 0 0 12px;
+
+  color: #f8fafc;
+
+  font-size: clamp(40px, 5vw, 58px);
+  font-weight: 800;
+
+  line-height: 1.05;
+}
+
+.admin-dashboard-header p {
+  margin: 0;
+
+  color: #94a3b8;
+
+  font-size: 17px;
+}
+
+
+/* =========================================================
+   EXPORT BUTTON
+========================================================= */
+
+.export-button {
+  min-width: 185px;
+  min-height: 58px;
+
+  padding: 0 24px;
+
+  border:
+    1px solid rgba(96, 165, 250, 0.3);
+
+  border-radius: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  cursor: pointer;
+
+  background:
+    rgba(37, 99, 235, 0.12);
+
+  color: #60a5fa;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.export-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 15px 35px rgba(37, 99, 235, 0.3);
+}
+
+.export-button:disabled {
+  opacity: 0.5;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   DASHBOARD STAT CARD
+========================================================= */
+
+.dashboard-stat-card {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+
+  gap: 22px;
+
+  padding: 30px 32px;
+
+  margin-bottom: 35px;
+
+  border:
+    1px solid rgba(148, 163, 184, 0.17);
+
+  border-radius: 24px;
+
+  background:
+    rgba(15, 29, 51, 0.92);
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.15);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.dashboard-stat-card:hover {
+  transform: translateY(-3px);
+
+  border-color:
+    rgba(96, 165, 250, 0.35);
+}
+
+.dashboard-stat-icon {
+  width: 58px;
+  height: 58px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 17px;
+
+  color: #60a5fa;
+
+  background:
+    rgba(37, 99, 235, 0.12);
+}
+
+.dashboard-stat-card > div:last-child {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.dashboard-stat-card span {
+  color: #94a3b8;
+
+  font-size: 14px;
+}
+
+.dashboard-stat-card strong {
+  color: #f8fafc;
+
+  font-size: 38px;
+  font-weight: 800;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   ATHLETE TABLE CARD
+========================================================= */
+
+.athlete-table-card {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 30px;
+
+  border:
+    1px solid rgba(148, 163, 184, 0.17);
+
+  border-radius: 26px;
+
+  background:
+    rgba(15, 29, 51, 0.94);
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.2);
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.athlete-table-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  margin-bottom: 28px;
+}
+
+.athlete-table-header h2 {
+  margin: 0 0 7px;
+
+  color: #f8fafc;
+
+  font-size: 26px;
+  font-weight: 750;
+}
+
+.athlete-table-header p {
+  margin: 0;
+
+  color: #94a3b8;
+
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   ATHLETE SEARCH
+========================================================= */
+
+.athlete-search {
+  position: relative;
+
+  width: 100%;
+  max-width: 380px;
+}
+
+.athlete-search > svg {
+  position: absolute;
+
+  left: 17px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #94a3b8;
+
+  pointer-events: none;
+
+  z-index: 2;
+}
+
+.athlete-search input {
+  display: block;
+
+  width: 100%;
+  height: 52px;
+
+  box-sizing: border-box;
+
+  padding:
+    0
+    18px
+    0
+    52px;
+
+  border:
+    1px solid rgba(148, 163, 184, 0.18);
+
+  border-radius: 14px;
+
+  outline: none;
+
+  background:
+    rgba(30, 41, 59, 0.8);
+
+  color: #f8fafc;
+
+  font-size: 15px;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.athlete-search input::placeholder {
+  color: #64748b;
+}
+
+.athlete-search input:focus {
+  border-color: #3b82f6;
+
+  box-shadow:
+    0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+
+/* =========================================================
+   ATHLETE TABLE
+========================================================= */
+
+.athlete-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+
+  border:
+    1px solid rgba(148, 163, 184, 0.14);
+
+  border-radius: 18px;
+}
+
+.athlete-table {
+  width: 100%;
+  min-width: 900px;
+
+  border-collapse: collapse;
+
+  table-layout: auto;
+}
+
+.athlete-table th {
+  padding: 20px 22px;
+
+  text-align: left;
+
+  background:
+    rgba(30, 41, 59, 0.72);
+
+  color: #94a3b8;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+
+  white-space: nowrap;
+}
+
+.athlete-table td {
+  padding: 22px;
+
+  border-top:
+    1px solid rgba(148, 163, 184, 0.14);
+
+  color: #94a3b8;
+
+  font-size: 15px;
+
+  vertical-align: middle;
+
+  white-space: nowrap;
+}
+
+.athlete-table tbody tr {
+  transition:
+    background 0.25s ease;
+}
+
+.athlete-table tbody tr:hover {
+  background:
+    rgba(59, 130, 246, 0.05);
+}
+
+.athlete-table td strong {
+  color: #f8fafc;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   STATUS BADGE
+========================================================= */
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px 13px;
+
+  border-radius: 999px;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+  white-space: nowrap;
+}
+
+.status-pending {
+  background:
+    rgba(234, 179, 8, 0.13);
+
+  color: #facc15;
+}
+
+.status-approved {
+  background:
+    rgba(34, 197, 94, 0.13);
+
+  color: #4ade80;
+}
+
+.status-rejected {
+  background:
+    rgba(239, 68, 68, 0.13);
+
+  color: #f87171;
+}
+
+
+/* =========================================================
+   VIEW BUTTON
+========================================================= */
+
+.view-athlete-button {
+  min-height: 40px;
+
+  padding: 0 15px;
+
+  border:
+    1px solid rgba(59, 130, 246, 0.4);
+
+  border-radius: 10px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  cursor: pointer;
+
+  background:
+    rgba(37, 99, 235, 0.08);
+
+  color: #60a5fa;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.view-athlete-button:hover {
+  transform: translateY(-1px);
+
+  background: #2563eb;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   ADMIN LOADING
+========================================================= */
+
+.admin-loading,
+.admin-empty {
+  min-height: 300px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  color: #60a5fa;
+}
+
+.admin-loading p,
+.admin-empty p {
+  color: #94a3b8;
+}
+
+.admin-empty h3 {
+  margin: 20px 0 5px;
+
+  color: #f8fafc;
+
+  font-size: 22px;
+}
+
+.loading-icon {
+  animation: adminSpin 0.8s linear infinite;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes adminSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes adminFadeUp {
+  from {
+    opacity: 0;
+
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================================
+   TABLE SCROLLBAR
+========================================================= */
+
+.athlete-table-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.athlete-table-wrapper::-webkit-scrollbar-track {
+  background:
+    rgba(15, 23, 42, 0.5);
+}
+
+.athlete-table-wrapper::-webkit-scrollbar-thumb {
+  background:
+    rgba(96, 165, 250, 0.4);
+
+  border-radius: 20px;
+}
+
+
+/* =========================================================
+   TABLET RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+  .admin-dashboard-page {
+    padding: 50px 30px;
+  }
+
+  .admin-dashboard-header {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .export-button {
+    width: 100%;
+  }
+
+  .athlete-table-header {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .athlete-search {
+    max-width: none;
+  }
+}
+
+
+/* =========================================================
+   MOBILE RESPONSIVE
+========================================================= */
+
+@media (max-width: 600px) {
+  .admin-login-page {
+    padding: 35px 18px;
+  }
+
+  .admin-login-card {
+    padding: 34px 24px;
+
+    border-radius: 22px;
+  }
+
+  .admin-login-icon {
+    width: 65px;
+    height: 65px;
+
+    border-radius: 18px;
+  }
+
+  .admin-login-card .registration-label {
+    letter-spacing: 2px;
+  }
+
+  .admin-login-card h1 {
+    font-size: 34px;
+  }
+
+  .admin-login-description {
+    font-size: 15px;
+  }
+
+  .admin-dashboard-page {
+    padding: 40px 18px;
+  }
+
+  .admin-dashboard-header h1 {
+    font-size: 38px;
+  }
+
+  .dashboard-stat-card {
+    padding: 24px;
+  }
+
+  .athlete-table-card {
+    padding: 20px;
+  }
+
+  .athlete-table-header h2 {
+    font-size: 23px;
+  }
+}
+
+/* =========================================================
+   ATHLETE PROFILE PAGE
+========================================================= */
+
+.athlete-profile-page {
+  width: 100%;
+  min-height: calc(100vh - 88px);
+  box-sizing: border-box;
+
+  padding: 55px 8% 80px;
+
+  color: #f8fafc;
+
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(124, 58, 237, 0.16),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 5% 10%,
+      rgba(37, 99, 235, 0.14),
+      transparent 30%
+    ),
+    #020817;
+}
+
+.athlete-profile-container {
+  width: 100%;
+  max-width: 1450px;
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.profile-back-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  min-height: 45px;
+
+  margin-bottom: 28px;
+  padding: 0 17px;
+
+  border: 1px solid rgba(96, 165, 250, 0.25);
+  border-radius: 12px;
+
+  background: rgba(37, 99, 235, 0.08);
+
+  color: #60a5fa;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.profile-back-button:hover {
+  transform: translateX(-3px);
+
+  background: #2563eb;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   PROFILE HERO
+========================================================= */
+
+.profile-hero {
+  width: 100%;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+
+  gap: 30px;
+
+  position: relative;
+
+  padding: 36px;
+
+  margin-bottom: 30px;
+
+  border: 1px solid rgba(148, 163, 184, 0.17);
+  border-radius: 26px;
+
+  background: rgba(15, 29, 51, 0.94);
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.22);
+
+  animation: adminFadeUp 0.6s ease;
+}
+
+
+/* =========================================================
+   PROFILE IMAGE
+========================================================= */
+
+.profile-image-wrapper {
+  width: 145px;
+  height: 145px;
+
+  flex-shrink: 0;
+
+  border-radius: 24px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(96, 165, 250, 0.25);
+
+  background: rgba(30, 41, 59, 0.8);
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.athlete-profile-image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+.profile-image-placeholder {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #60a5fa;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(37, 99, 235, 0.18),
+      rgba(124, 58, 237, 0.18)
+    );
+}
+
+
+/* =========================================================
+   PROFILE HERO INFORMATION
+========================================================= */
+
+.profile-hero-info {
+  flex: 1;
+
+  min-width: 0;
+}
+
+.profile-hero-info .registration-label {
+  display: block;
+
+  margin-bottom: 16px;
+
+  color: #60a5fa;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  letter-spacing: 3px;
+}
+
+.profile-hero-info h1 {
+  margin: 0 0 20px;
+
+  color: #f8fafc;
+
+  font-size: clamp(34px, 5vw, 50px);
+  font-weight: 800;
+
+  line-height: 1.05;
+}
+
+.profile-contact-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 14px 24px;
+}
+
+.profile-contact-list span {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color: #94a3b8;
+
+  font-size: 15px;
+
+  word-break: break-word;
+}
+
+.profile-contact-list svg {
+  flex-shrink: 0;
+
+  color: #60a5fa;
+}
+
+.profile-hero > .status-badge {
+  position: absolute;
+
+  top: 30px;
+  right: 30px;
+}
+
+
+/* =========================================================
+   PROFILE DETAILS GRID
+========================================================= */
+
+.profile-details-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 25px;
+}
+
+
+/* =========================================================
+   PROFILE SECTION
+========================================================= */
+
+.profile-section {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 30px;
+
+  border: 1px solid rgba(148, 163, 184, 0.17);
+  border-radius: 24px;
+
+  background: rgba(15, 29, 51, 0.92);
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.15);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.profile-section:hover {
+  transform: translateY(-3px);
+
+  border-color: rgba(96, 165, 250, 0.3);
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================================================
+   PROFILE SECTION TITLE
+========================================================= */
+
+.profile-section-title {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding-bottom: 20px;
+  margin-bottom: 24px;
+
+  border-bottom:
+    1px solid rgba(148, 163, 184, 0.14);
+
+  color: #60a5fa;
+}
+
+.profile-section-title h2 {
+  margin: 0;
+
+  color: #f8fafc;
+
+  font-size: 21px;
+  font-weight: 750;
+}
+
+
+/* =========================================================
+   PROFILE INFORMATION GRID
+========================================================= */
+
+.profile-information-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 22px;
+}
+
+
+/* =========================================================
+   DETAIL ITEM
+========================================================= */
+
+.profile-detail-item {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.profile-detail-item span {
+  color: #64748b;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 0.7px;
+
+  text-transform: uppercase;
+}
+
+.profile-detail-item strong {
+  color: #e2e8f0;
+
+  font-size: 15px;
+  font-weight: 650;
+
+  line-height: 1.5;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   DOCUMENT LIST
+========================================================= */
+
+.document-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 14px;
+}
+
+
+/* =========================================================
+   DOCUMENT CARD
+========================================================= */
+
+.document-card {
+  width: 100%;
+  min-height: 78px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 16px 18px;
+
+  border: 1px solid rgba(96, 165, 250, 0.2);
+  border-radius: 15px;
+
+  background: rgba(37, 99, 235, 0.07);
+
+  color: #60a5fa;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.document-card:hover {
+  transform: translateY(-2px);
+
+  background: rgba(37, 99, 235, 0.15);
+
+  border-color: rgba(96, 165, 250, 0.45);
+}
+
+.document-card > svg:first-child {
+  flex-shrink: 0;
+}
+
+.document-card > div {
+  flex: 1;
+
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.document-card strong {
+  color: #f8fafc;
+
+  font-size: 15px;
+}
+
+.document-card span {
+  color: #94a3b8;
+
+  font-size: 13px;
+}
+
+.document-card > svg:last-child {
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   MISSING DOCUMENT
+========================================================= */
+
+.document-missing {
+  cursor: default;
+
+  color: #64748b;
+
+  border-color: rgba(148, 163, 184, 0.14);
+
+  background: rgba(30, 41, 59, 0.4);
+}
+
+.document-missing:hover {
+  transform: none;
+
+  background: rgba(30, 41, 59, 0.4);
+
+  border-color: rgba(148, 163, 184, 0.14);
+}
+
+
+/* =========================================================
+   PROFILE LOADING
+========================================================= */
+
+.profile-loading {
+  min-height: 500px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  color: #60a5fa;
+}
+
+.profile-loading h2 {
+  margin: 22px 0 8px;
+
+  color: #f8fafc;
+
+  font-size: 26px;
+}
+
+.profile-loading p {
+  margin: 0;
+
+  color: #94a3b8;
+}
+
+
+/* =========================================================
+   PROFILE ERROR
+========================================================= */
+
+.profile-error {
+  width: calc(100% - 40px);
+  max-width: 550px;
+
+  box-sizing: border-box;
+
+  margin: 80px auto;
+
+  padding: 45px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  border: 1px solid rgba(248, 113, 113, 0.25);
+  border-radius: 25px;
+
+  background: rgba(15, 29, 51, 0.94);
+
+  color: #f87171;
+}
+
+.profile-error h2 {
+  margin: 22px 0 10px;
+
+  color: #f8fafc;
+
+  font-size: 27px;
+}
+
+.profile-error p {
+  margin: 0 0 25px;
+
+  color: #94a3b8;
+}
+
+.profile-error .primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  min-height: 48px;
+
+  padding: 0 20px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   ATHLETE PROFILE TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+  .athlete-profile-page {
+    padding: 50px 30px 70px;
+  }
+
+  .profile-details-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================================================
+   ATHLETE PROFILE MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+  .athlete-profile-page {
+    padding: 35px 18px 60px;
+  }
+
+  .profile-hero {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    padding: 25px;
+  }
+
+  .profile-image-wrapper {
+    width: 120px;
+    height: 120px;
+  }
+
+  .profile-hero > .status-badge {
+    top: 25px;
+    right: 25px;
+  }
+
+  .profile-hero-info h1 {
+    font-size: 34px;
+  }
+
+  .profile-contact-list {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .profile-section {
+    padding: 24px;
+  }
+
+  .profile-information-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================================================
+   ATHLETE PROFILE SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+  .profile-hero {
+    padding: 20px;
+  }
+
+  .profile-hero > .status-badge {
+    position: static;
+
+    margin-top: 5px;
+  }
+
+  .profile-image-wrapper {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile-hero-info h1 {
+    font-size: 30px;
+  }
+
+  .profile-section {
+    padding: 20px;
+  }
+
+  .profile-section-title h2 {
+    font-size: 19px;
+  }
+}
+/* =========================================================
+   ADMIN HEADER ACTIONS
+========================================================= */
+
+.admin-header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   LOGOUT BUTTON
+========================================================= */
+
+.admin-logout-button {
+  min-height: 58px;
+  padding: 0 24px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  border: 1px solid rgba(248, 113, 113, 0.35);
+  border-radius: 15px;
+
+  background: rgba(239, 68, 68, 0.1);
+
+  color: #f87171;
+
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.admin-logout-button:hover {
+  transform: translateY(-2px);
+
+  background: #dc2626;
+
+  border-color: #dc2626;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 15px 35px rgba(220, 38, 38, 0.25);
+}
+
+.admin-logout-button:active {
+  transform: scale(0.97);
+}
+
+
+/* =========================================================
+   RESPONSIVE ADMIN ACTIONS
+========================================================= */
+
+@media (max-width: 768px) {
+  .admin-header-actions {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+  }
+
+  .admin-header-actions .export-button,
+  .admin-header-actions .admin-logout-button {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .admin-header-actions {
+    grid-template-columns: 1fr;
+  }
+}
+/* =========================================================
+   ADMIN AUTH LOADING
+========================================================= */
+
+.admin-auth-loading-page {
+  width: 100%;
+  min-height: calc(100vh - 88px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+
+  box-sizing: border-box;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      rgba(37, 99, 235, 0.15),
+      transparent 35%
+    ),
+    #020817;
+
+  color: #60a5fa;
+}
+
+.admin-auth-loading-page h2 {
+  margin: 22px 0 8px;
+
+  color: #f8fafc;
+
+  font-size: 27px;
+}
+
+.admin-auth-loading-page p {
+  margin: 0;
+
+  color: #94a3b8;
+}
+/* =========================================================
+   ATHLETE APPROVAL CARD
+========================================================= */
+
+.approval-card {
+  width: 100%;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  padding: 28px 30px;
+  margin-bottom: 30px;
+
+  border: 1px solid rgba(148, 163, 184, 0.17);
+  border-radius: 22px;
+
+  background: rgba(15, 29, 51, 0.94);
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.16);
+}
+
+.approval-card-info span {
+  color: #60a5fa;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.approval-card-info h2 {
+  margin: 10px 0 8px;
+
+  color: #f8fafc;
+
+  font-size: 24px;
+}
+
+.approval-card-info p {
+  max-width: 650px;
+
+  margin: 0;
+
+  color: #94a3b8;
+
+  line-height: 1.6;
+}
+
+.approval-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  flex-shrink: 0;
+}
+
+.approve-athlete-button,
+.reject-athlete-button {
+  min-height: 50px;
+
+  padding: 0 20px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  border-radius: 13px;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.approve-athlete-button {
+  border: 1px solid rgba(74, 222, 128, 0.35);
+
+  background: rgba(34, 197, 94, 0.1);
+
+  color: #4ade80;
+}
+
+.approve-athlete-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+
+  background: #16a34a;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 15px 30px rgba(22, 163, 74, 0.25);
+}
+
+.reject-athlete-button {
+  border: 1px solid rgba(248, 113, 113, 0.35);
+
+  background: rgba(239, 68, 68, 0.1);
+
+  color: #f87171;
+}
+
+.reject-athlete-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+
+  background: #dc2626;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 15px 30px rgba(220, 38, 38, 0.25);
+}
+
+.approve-athlete-button:disabled,
+.reject-athlete-button:disabled {
+  opacity: 0.45;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+@media (max-width: 900px) {
+  .approval-card {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .approval-actions {
+    width: 100%;
+  }
+
+  .approval-actions button {
+    flex: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .approval-card {
+    padding: 24px;
+  }
+
+  .approval-actions {
+    flex-direction: column;
+  }
+
+  .approval-actions button {
+    width: 100%;
+  }
+}
