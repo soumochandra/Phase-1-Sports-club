@@ -51,6 +51,14 @@ function GuardianDetails({ formData, setFormData }) {
           value={formData.guardianRelation}
           onChange={handleChange}
         />
+
+        <input
+          type="email"
+          name="guardianEmail"
+          placeholder="Guardian Email (Optional)"
+          value={formData.guardianEmail}
+          onChange={handleChange}
+        />
       </div>
     </div>
   );

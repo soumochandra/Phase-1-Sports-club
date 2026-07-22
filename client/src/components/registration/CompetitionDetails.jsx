@@ -11,6 +11,8 @@ const competitions = [
   "Table Tennis",
 ];
 
+const categories = ["Beginner", "Intermediate", "Advanced"];
+
 function CompetitionDetails({
   formData,
   setFormData,
@@ -19,6 +21,15 @@ function CompetitionDetails({
     setFormData({
       ...formData,
       competitionApplied: competition,
+    });
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormData({
+      ...formData,
+      [name]: value,
     });
   };
 
@@ -33,9 +44,27 @@ function CompetitionDetails({
           <h2>Competition Details</h2>
 
           <p className="form-description">
-            Select the competition you want to apply for.
+            Select the competition you want to apply for and choose the category.
           </p>
         </div>
+      </div>
+
+      <div className="form-grid">
+        <select name="category" value={formData.category} onChange={handleChange}>
+          <option value="">Select category</option>
+          {categories.map((category) => (
+            <option key={category} value={category}>
+              {category}
+            </option>
+          ))}
+        </select>
+
+        <select name="eventLevel" value={formData.eventLevel} onChange={handleChange}>
+          <option value="">Select level</option>
+          <option value="U-14">U-14</option>
+          <option value="U-18">U-18</option>
+          <option value="Senior">Senior</option>
+        </select>
       </div>
 
       <div className="competition-grid">
@@ -48,9 +77,7 @@ function CompetitionDetails({
                 ? "selected"
                 : ""
             }`}
-            onClick={() =>
-              selectCompetition(competition)
-            }
+            onClick={() => selectCompetition(competition)}
           >
             <Trophy size={22} />
 

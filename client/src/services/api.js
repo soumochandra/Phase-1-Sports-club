@@ -2,7 +2,7 @@ import axios from "axios";
 import { auth } from "../config/firebase";
 
 const api = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: "http://localhost:5001/api",
 });
 
 export const getAllAthletes = async () => {

@@ -1,1921 +1,625 @@
-/* =========================================================
-   ADMIN GLOBAL
-========================================================= */
+/* Sports Club Management — Admin Dashboard */
 
-.admin-login-page,
-.admin-dashboard-page {
-  width: 100%;
-  min-height: calc(100vh - 88px);
-  box-sizing: border-box;
-  color: #f8fafc;
 
-  background:
-    radial-gradient(
-      circle at 90% 10%,
-      rgba(124, 58, 237, 0.17),
-      transparent 32%
-    ),
-    radial-gradient(
-      circle at 5% 10%,
-      rgba(37, 99, 235, 0.15),
-      transparent 30%
-    ),
-    #020817;
-}
-
-
-/* =========================================================
-   ADMIN LOGIN PAGE
-========================================================= */
-
-.admin-login-page {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 70px 24px;
-}
-
-.admin-login-card {
-  width: 100%;
-  max-width: 550px;
-  box-sizing: border-box;
-
-  padding: 48px 50px;
-
-  background: rgba(15, 29, 51, 0.95);
-
-  border: 1px solid rgba(148, 163, 184, 0.18);
-  border-radius: 28px;
-
-  box-shadow:
-    0 30px 80px rgba(0, 0, 0, 0.4),
-    0 0 60px rgba(59, 130, 246, 0.06);
-
-  animation: adminFadeUp 0.7s ease;
-}
-
-.admin-login-icon {
-  width: 76px;
-  height: 76px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  margin-bottom: 32px;
-
-  border-radius: 22px;
-
-  color: #ffffff;
-
-  background:
-    linear-gradient(
-      135deg,
-      #3b82f6,
-      #7c3aed
-    );
-
-  box-shadow:
-    0 18px 40px rgba(99, 102, 241, 0.3);
-}
-
-.admin-login-card .registration-label {
-  display: block;
-
-  margin-bottom: 26px;
-
-  color: #60a5fa;
-
-  font-size: 14px;
-  font-weight: 800;
-
-  letter-spacing: 4px;
-}
-
-.admin-login-card h1 {
-  margin: 0 0 14px;
-
-  color: #f8fafc;
-
-  font-size: clamp(38px, 5vw, 48px);
-  font-weight: 800;
-
-  line-height: 1.1;
-}
-
-.admin-login-description {
-  margin: 0 0 34px;
-
-  color: #94a3b8;
-
-  font-size: 17px;
-  line-height: 1.6;
-}
-
-
-/* =========================================================
-   LOGIN ERROR
-========================================================= */
-
-.admin-login-error,
-.admin-error {
-  width: 100%;
-  box-sizing: border-box;
-
-  display: flex;
-  align-items: center;
-
-  gap: 10px;
-
-  padding: 14px 16px;
-  margin-bottom: 20px;
-
-  border:
-    1px solid rgba(248, 113, 113, 0.4);
-
-  border-radius: 12px;
-
-  background:
-    rgba(127, 29, 29, 0.2);
-
-  color: #fca5a5;
-
-  font-size: 14px;
-}
-
-
-/* =========================================================
-   LOGIN FORM
-========================================================= */
-
-.admin-login-card form {
-  width: 100%;
-
-  display: flex;
-  flex-direction: column;
-
-  gap: 20px;
-}
-
-.admin-input-group {
-  position: relative;
-
-  width: 100%;
-}
-
-.admin-input-group > svg {
-  position: absolute;
-
-  left: 18px;
-  top: 50%;
-
-  transform: translateY(-50%);
-
-  color: #64748b;
-
-  pointer-events: none;
-
-  z-index: 2;
-}
-
-.admin-input-group input {
-  display: block;
-
-  width: 100%;
-  height: 58px;
-
-  box-sizing: border-box;
-
-  padding:
-    0
-    18px
-    0
-    54px;
-
-  border:
-    1px solid rgba(148, 163, 184, 0.2);
-
-  border-radius: 14px;
-
-  outline: none;
-
-  background:
-    rgba(30, 41, 59, 0.8);
-
-  color: #f8fafc;
-
-  font-size: 16px;
-
-  transition:
-    border-color 0.3s ease,
-    box-shadow 0.3s ease,
-    background 0.3s ease;
-}
-
-.admin-input-group input::placeholder {
-  color: #64748b;
-}
-
-.admin-input-group input:focus {
-  border-color: #3b82f6;
-
-  background:
-    rgba(30, 41, 59, 1);
-
-  box-shadow:
-    0 0 0 4px rgba(59, 130, 246, 0.12);
-}
-
-
-/* =========================================================
-   LOGIN BUTTON
-========================================================= */
-
-.admin-login-button {
-  width: 100%;
-  height: 58px;
-
-  box-sizing: border-box;
-
-  border: none;
-  border-radius: 14px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  gap: 11px;
-
-  cursor: pointer;
-
-  background:
-    linear-gradient(
-      135deg,
-      #2563eb,
-      #3b82f6
-    );
-
-  color: #ffffff;
-
-  font-size: 16px;
-  font-weight: 700;
-
-  box-shadow:
-    0 15px 35px rgba(37, 99, 235, 0.25);
-
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
-}
-
-.admin-login-button:hover:not(:disabled) {
-  transform: translateY(-2px);
-
-  box-shadow:
-    0 20px 45px rgba(37, 99, 235, 0.35);
-}
-
-.admin-login-button:active:not(:disabled) {
-  transform: scale(0.98);
-}
-
-.admin-login-button:disabled {
-  opacity: 0.65;
-
-  cursor: not-allowed;
-}
-
-
-/* =========================================================
-   SECURITY NOTE
-========================================================= */
-
-.admin-security-note {
-  margin-top: 24px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  gap: 8px;
-
-  color: #64748b;
-
-  font-size: 14px;
-}
-
-
-/* =========================================================
-   DASHBOARD
-========================================================= */
-
-.admin-dashboard-page {
-  padding: 65px 8%;
-}
-
-.admin-dashboard-container {
-  width: 100%;
-  max-width: 1450px;
-
-  margin: 0 auto;
-}
-
-
-/* =========================================================
-   DASHBOARD HEADER
-========================================================= */
-
-.admin-dashboard-header {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-
-  gap: 30px;
-
-  margin-bottom: 42px;
-}
-
-.admin-dashboard-header .registration-label {
-  display: block;
-
-  color: #60a5fa;
-
-  font-size: 13px;
-  font-weight: 800;
-
-  letter-spacing: 3px;
-
-  margin-bottom: 26px;
-}
-
-.admin-dashboard-header h1 {
-  margin: 0 0 12px;
-
-  color: #f8fafc;
-
-  font-size: clamp(40px, 5vw, 58px);
-  font-weight: 800;
-
-  line-height: 1.05;
-}
-
-.admin-dashboard-header p {
-  margin: 0;
-
-  color: #94a3b8;
-
-  font-size: 17px;
-}
-
-
-/* =========================================================
-   EXPORT BUTTON
-========================================================= */
-
-.export-button {
-  min-width: 185px;
-  min-height: 58px;
-
-  padding: 0 24px;
-
-  border:
-    1px solid rgba(96, 165, 250, 0.3);
-
-  border-radius: 15px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  gap: 10px;
-
-  cursor: pointer;
-
-  background:
-    rgba(37, 99, 235, 0.12);
-
-  color: #60a5fa;
-
-  font-size: 15px;
-  font-weight: 700;
-
-  transition:
-    transform 0.25s ease,
-    background 0.25s ease,
-    color 0.25s ease,
-    box-shadow 0.25s ease;
-}
-
-.export-button:hover:not(:disabled) {
-  transform: translateY(-2px);
-
-  background: #2563eb;
-
-  color: #ffffff;
-
-  box-shadow:
-    0 15px 35px rgba(37, 99, 235, 0.3);
-}
-
-.export-button:disabled {
-  opacity: 0.5;
-
-  cursor: not-allowed;
-}
-
-
-/* =========================================================
-   DASHBOARD STAT CARD
-========================================================= */
-
-.dashboard-stat-card {
-  width: 100%;
-
-  box-sizing: border-box;
-
-  display: flex;
-  align-items: center;
-
-  gap: 22px;
-
-  padding: 30px 32px;
-
-  margin-bottom: 35px;
-
-  border:
-    1px solid rgba(148, 163, 184, 0.17);
-
-  border-radius: 24px;
-
-  background:
-    rgba(15, 29, 51, 0.92);
-
-  box-shadow:
-    0 20px 50px rgba(0, 0, 0, 0.15);
-
-  transition:
-    transform 0.3s ease,
-    border-color 0.3s ease;
-}
-
-.dashboard-stat-card:hover {
-  transform: translateY(-3px);
-
-  border-color:
-    rgba(96, 165, 250, 0.35);
-}
-
-.dashboard-stat-icon {
-  width: 58px;
-  height: 58px;
-
-  flex-shrink: 0;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 17px;
-
-  color: #60a5fa;
-
-  background:
-    rgba(37, 99, 235, 0.12);
-}
-
-.dashboard-stat-card > div:last-child {
-  display: flex;
-  flex-direction: column;
-
-  gap: 5px;
-}
-
-.dashboard-stat-card span {
-  color: #94a3b8;
-
-  font-size: 14px;
-}
-
-.dashboard-stat-card strong {
-  color: #f8fafc;
-
-  font-size: 38px;
-  font-weight: 800;
-
-  line-height: 1;
-}
-
-
-/* =========================================================
-   ATHLETE TABLE CARD
-========================================================= */
-
-.athlete-table-card {
-  width: 100%;
-
-  box-sizing: border-box;
-
-  padding: 30px;
-
-  border:
-    1px solid rgba(148, 163, 184, 0.17);
-
-  border-radius: 26px;
-
-  background:
-    rgba(15, 29, 51, 0.94);
-
-  box-shadow:
-    0 25px 60px rgba(0, 0, 0, 0.2);
-
-  overflow: hidden;
-}
-
-
-/* =========================================================
-   TABLE HEADER
-========================================================= */
-
-.athlete-table-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  gap: 30px;
-
-  margin-bottom: 28px;
-}
-
-.athlete-table-header h2 {
-  margin: 0 0 7px;
-
-  color: #f8fafc;
-
-  font-size: 26px;
-  font-weight: 750;
-}
-
-.athlete-table-header p {
-  margin: 0;
-
-  color: #94a3b8;
-
-  font-size: 15px;
-}
-
-
-/* =========================================================
-   ATHLETE SEARCH
-========================================================= */
-
-.athlete-search {
-  position: relative;
-
-  width: 100%;
-  max-width: 380px;
-}
-
-.athlete-search > svg {
-  position: absolute;
-
-  left: 17px;
-  top: 50%;
-
-  transform: translateY(-50%);
-
-  color: #94a3b8;
-
-  pointer-events: none;
-
-  z-index: 2;
-}
-
-.athlete-search input {
-  display: block;
-
-  width: 100%;
-  height: 52px;
-
-  box-sizing: border-box;
-
-  padding:
-    0
-    18px
-    0
-    52px;
-
-  border:
-    1px solid rgba(148, 163, 184, 0.18);
-
-  border-radius: 14px;
-
-  outline: none;
-
-  background:
-    rgba(30, 41, 59, 0.8);
-
-  color: #f8fafc;
-
-  font-size: 15px;
-
-  transition:
-    border-color 0.25s ease,
-    box-shadow 0.25s ease;
-}
-
-.athlete-search input::placeholder {
-  color: #64748b;
-}
-
-.athlete-search input:focus {
-  border-color: #3b82f6;
-
-  box-shadow:
-    0 0 0 4px rgba(59, 130, 246, 0.1);
-}
-
-
-/* =========================================================
-   ATHLETE TABLE
-========================================================= */
-
-.athlete-table-wrapper {
-  width: 100%;
-
-  overflow-x: auto;
-
-  border:
-    1px solid rgba(148, 163, 184, 0.14);
-
-  border-radius: 18px;
-}
-
-.athlete-table {
-  width: 100%;
-  min-width: 900px;
-
-  border-collapse: collapse;
-
-  table-layout: auto;
-}
-
-.athlete-table th {
-  padding: 20px 22px;
-
-  text-align: left;
-
-  background:
-    rgba(30, 41, 59, 0.72);
-
-  color: #94a3b8;
-
-  font-size: 13px;
-  font-weight: 700;
-
-  letter-spacing: 1px;
-
-  text-transform: uppercase;
-
-  white-space: nowrap;
-}
-
-.athlete-table td {
-  padding: 22px;
-
-  border-top:
-    1px solid rgba(148, 163, 184, 0.14);
-
-  color: #94a3b8;
-
-  font-size: 15px;
-
-  vertical-align: middle;
-
-  white-space: nowrap;
-}
-
-.athlete-table tbody tr {
-  transition:
-    background 0.25s ease;
-}
-
-.athlete-table tbody tr:hover {
-  background:
-    rgba(59, 130, 246, 0.05);
-}
-
-.athlete-table td strong {
-  color: #f8fafc;
-
-  font-weight: 700;
-}
-
-
-/* =========================================================
-   STATUS BADGE
-========================================================= */
-
-.status-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 8px 13px;
-
-  border-radius: 999px;
-
-  font-size: 11px;
-  font-weight: 800;
-
-  text-transform: uppercase;
-
-  white-space: nowrap;
-}
-
-.status-pending {
-  background:
-    rgba(234, 179, 8, 0.13);
-
-  color: #facc15;
-}
-
-.status-approved {
-  background:
-    rgba(34, 197, 94, 0.13);
-
-  color: #4ade80;
-}
-
-.status-rejected {
-  background:
-    rgba(239, 68, 68, 0.13);
-
-  color: #f87171;
-}
-
-
-/* =========================================================
-   VIEW BUTTON
-========================================================= */
-
-.view-athlete-button {
-  min-height: 40px;
-
-  padding: 0 15px;
-
-  border:
-    1px solid rgba(59, 130, 246, 0.4);
-
-  border-radius: 10px;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  gap: 7px;
-
-  cursor: pointer;
-
-  background:
-    rgba(37, 99, 235, 0.08);
-
-  color: #60a5fa;
-
-  font-size: 14px;
-  font-weight: 600;
-
-  transition:
-    background 0.25s ease,
-    color 0.25s ease,
-    transform 0.25s ease;
-}
-
-.view-athlete-button:hover {
-  transform: translateY(-1px);
-
-  background: #2563eb;
-
-  color: #ffffff;
-}
-
-
-/* =========================================================
-   ADMIN LOADING
-========================================================= */
-
-.admin-loading,
-.admin-empty {
-  min-height: 300px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  text-align: center;
-
-  color: #60a5fa;
-}
-
-.admin-loading p,
-.admin-empty p {
-  color: #94a3b8;
-}
-
-.admin-empty h3 {
-  margin: 20px 0 5px;
-
-  color: #f8fafc;
-
-  font-size: 22px;
-}
-
-.loading-icon {
-  animation: adminSpin 0.8s linear infinite;
-}
-
-
-/* =========================================================
-   ANIMATIONS
-========================================================= */
-
-@keyframes adminSpin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes adminFadeUp {
-  from {
-    opacity: 0;
-
-    transform: translateY(30px);
-  }
-
-  to {
-    opacity: 1;
-
-    transform: translateY(0);
-  }
-}
-
-
-/* =========================================================
-   TABLE SCROLLBAR
-========================================================= */
-
-.athlete-table-wrapper::-webkit-scrollbar {
-  height: 8px;
-}
-
-.athlete-table-wrapper::-webkit-scrollbar-track {
-  background:
-    rgba(15, 23, 42, 0.5);
-}
-
-.athlete-table-wrapper::-webkit-scrollbar-thumb {
-  background:
-    rgba(96, 165, 250, 0.4);
-
-  border-radius: 20px;
-}
-
-
-/* =========================================================
-   TABLET RESPONSIVE
-========================================================= */
-
-@media (max-width: 900px) {
-  .admin-dashboard-page {
-    padding: 50px 30px;
-  }
-
-  .admin-dashboard-header {
-    flex-direction: column;
-
-    align-items: stretch;
-  }
-
-  .export-button {
-    width: 100%;
-  }
-
-  .athlete-table-header {
-    flex-direction: column;
-
-    align-items: stretch;
-  }
-
-  .athlete-search {
-    max-width: none;
-  }
-}
-
-
-/* =========================================================
-   MOBILE RESPONSIVE
-========================================================= */
-
-@media (max-width: 600px) {
-  .admin-login-page {
-    padding: 35px 18px;
-  }
-
-  .admin-login-card {
-    padding: 34px 24px;
-
-    border-radius: 22px;
-  }
-
-  .admin-login-icon {
-    width: 65px;
-    height: 65px;
-
-    border-radius: 18px;
-  }
-
-  .admin-login-card .registration-label {
-    letter-spacing: 2px;
-  }
-
-  .admin-login-card h1 {
-    font-size: 34px;
-  }
-
-  .admin-login-description {
-    font-size: 15px;
-  }
-
-  .admin-dashboard-page {
-    padding: 40px 18px;
-  }
-
-  .admin-dashboard-header h1 {
-    font-size: 38px;
-  }
-
-  .dashboard-stat-card {
-    padding: 24px;
-  }
-
-  .athlete-table-card {
-    padding: 20px;
-  }
-
-  .athlete-table-header h2 {
-    font-size: 23px;
-  }
-}
-
-/* =========================================================
-   ATHLETE PROFILE PAGE
-========================================================= */
-
-.athlete-profile-page {
-  width: 100%;
-  min-height: calc(100vh - 88px);
-  box-sizing: border-box;
-
-  padding: 55px 8% 80px;
-
-  color: #f8fafc;
-
-  background:
-    radial-gradient(
-      circle at 90% 10%,
-      rgba(124, 58, 237, 0.16),
-      transparent 32%
-    ),
-    radial-gradient(
-      circle at 5% 10%,
-      rgba(37, 99, 235, 0.14),
-      transparent 30%
-    ),
-    #020817;
-}
-
-.athlete-profile-container {
-  width: 100%;
-  max-width: 1450px;
-  margin: 0 auto;
-}
-
-
-/* =========================================================
-   BACK BUTTON
-========================================================= */
-
-.profile-back-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  gap: 9px;
-
-  min-height: 45px;
-
-  margin-bottom: 28px;
-  padding: 0 17px;
-
-  border: 1px solid rgba(96, 165, 250, 0.25);
-  border-radius: 12px;
-
-  background: rgba(37, 99, 235, 0.08);
-
-  color: #60a5fa;
-
-  font-size: 14px;
-  font-weight: 700;
-
-  cursor: pointer;
-
-  transition:
-    transform 0.25s ease,
-    background 0.25s ease,
-    color 0.25s ease;
-}
-
-.profile-back-button:hover {
-  transform: translateX(-3px);
-
-  background: #2563eb;
-
-  color: #ffffff;
-}
-
-
-/* =========================================================
-   PROFILE HERO
-========================================================= */
-
-.profile-hero {
-  width: 100%;
-  box-sizing: border-box;
-
-  display: flex;
-  align-items: center;
-
-  gap: 30px;
-
-  position: relative;
-
-  padding: 36px;
-
-  margin-bottom: 30px;
-
-  border: 1px solid rgba(148, 163, 184, 0.17);
-  border-radius: 26px;
-
-  background: rgba(15, 29, 51, 0.94);
-
-  box-shadow:
-    0 25px 60px rgba(0, 0, 0, 0.22);
-
-  animation: adminFadeUp 0.6s ease;
-}
-
 
-/* =========================================================
-   PROFILE IMAGE
-========================================================= */
+/* ================================
+   ATHLETE PROFILE
+================================ */
 
-.profile-image-wrapper {
-  width: 145px;
-  height: 145px;
-
-  flex-shrink: 0;
-
-  border-radius: 24px;
-
-  overflow: hidden;
-
-  border: 1px solid rgba(96, 165, 250, 0.25);
-
-  background: rgba(30, 41, 59, 0.8);
-
-  box-shadow:
-    0 15px 35px rgba(0, 0, 0, 0.25);
-}
-
-.athlete-profile-image {
-  width: 100%;
-  height: 100%;
-
-  display: block;
-
-  object-fit: cover;
-}
-
-.profile-image-placeholder {
-  width: 100%;
-  height: 100%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  color: #60a5fa;
-
-  background:
-    linear-gradient(
-      135deg,
-      rgba(37, 99, 235, 0.18),
-      rgba(124, 58, 237, 0.18)
-    );
-}
-
-
-/* =========================================================
-   PROFILE HERO INFORMATION
-========================================================= */
-
-.profile-hero-info {
-  flex: 1;
-
-  min-width: 0;
-}
-
-.profile-hero-info .registration-label {
-  display: block;
-
-  margin-bottom: 16px;
-
-  color: #60a5fa;
-
-  font-size: 13px;
-  font-weight: 800;
-
-  letter-spacing: 3px;
-}
-
-.profile-hero-info h1 {
-  margin: 0 0 20px;
-
-  color: #f8fafc;
-
-  font-size: clamp(34px, 5vw, 50px);
-  font-weight: 800;
-
-  line-height: 1.05;
-}
-
-.profile-contact-list {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-
-  gap: 14px 24px;
-}
-
-.profile-contact-list span {
-  display: inline-flex;
-  align-items: center;
-
-  gap: 8px;
-
-  color: #94a3b8;
-
-  font-size: 15px;
-
-  word-break: break-word;
-}
-
-.profile-contact-list svg {
-  flex-shrink: 0;
-
-  color: #60a5fa;
-}
-
-.profile-hero > .status-badge {
-  position: absolute;
-
-  top: 30px;
-  right: 30px;
-}
-
-
-/* =========================================================
-   PROFILE DETAILS GRID
-========================================================= */
-
-.profile-details-grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
-
-  gap: 25px;
-}
-
-
-/* =========================================================
-   PROFILE SECTION
-========================================================= */
-
-.profile-section {
-  width: 100%;
-  box-sizing: border-box;
-
-  padding: 30px;
-
-  border: 1px solid rgba(148, 163, 184, 0.17);
-  border-radius: 24px;
-
-  background: rgba(15, 29, 51, 0.92);
-
-  box-shadow:
-    0 20px 50px rgba(0, 0, 0, 0.15);
-
-  transition:
-    transform 0.3s ease,
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.profile-section:hover {
-  transform: translateY(-3px);
-
-  border-color: rgba(96, 165, 250, 0.3);
-
-  box-shadow:
-    0 25px 60px rgba(0, 0, 0, 0.2);
-}
-
-
-/* =========================================================
-   PROFILE SECTION TITLE
-========================================================= */
-
-.profile-section-title {
-  display: flex;
-  align-items: center;
-
-  gap: 12px;
-
-  padding-bottom: 20px;
-  margin-bottom: 24px;
-
-  border-bottom:
-    1px solid rgba(148, 163, 184, 0.14);
-
-  color: #60a5fa;
-}
-
-.profile-section-title h2 {
-  margin: 0;
-
-  color: #f8fafc;
-
-  font-size: 21px;
-  font-weight: 750;
-}
-
-
-/* =========================================================
-   PROFILE INFORMATION GRID
-========================================================= */
-
-.profile-information-grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
-
-  gap: 22px;
-}
-
-
-/* =========================================================
-   DETAIL ITEM
-========================================================= */
-
-.profile-detail-item {
-  min-width: 0;
-
-  display: flex;
-  flex-direction: column;
-
-  gap: 7px;
-}
-
-.profile-detail-item span {
-  color: #64748b;
-
-  font-size: 12px;
-  font-weight: 700;
-
-  letter-spacing: 0.7px;
-
-  text-transform: uppercase;
-}
-
-.profile-detail-item strong {
-  color: #e2e8f0;
-
-  font-size: 15px;
-  font-weight: 650;
-
-  line-height: 1.5;
-
-  overflow-wrap: anywhere;
-}
-
-
-/* =========================================================
-   DOCUMENT LIST
-========================================================= */
-
-.document-list {
-  display: flex;
-  flex-direction: column;
-
-  gap: 14px;
-}
-
-
-/* =========================================================
-   DOCUMENT CARD
-========================================================= */
-
-.document-card {
-  width: 100%;
-  min-height: 78px;
-
-  box-sizing: border-box;
-
-  display: flex;
-  align-items: center;
-
-  gap: 15px;
-
-  padding: 16px 18px;
-
-  border: 1px solid rgba(96, 165, 250, 0.2);
-  border-radius: 15px;
-
-  background: rgba(37, 99, 235, 0.07);
-
-  color: #60a5fa;
-
-  text-decoration: none;
-
-  transition:
-    transform 0.25s ease,
-    background 0.25s ease,
-    border-color 0.25s ease;
-}
-
-.document-card:hover {
-  transform: translateY(-2px);
-
-  background: rgba(37, 99, 235, 0.15);
-
-  border-color: rgba(96, 165, 250, 0.45);
-}
-
-.document-card > svg:first-child {
-  flex-shrink: 0;
-}
-
-.document-card > div {
-  flex: 1;
-
-  min-width: 0;
-
-  display: flex;
-  flex-direction: column;
-
-  gap: 5px;
+.athlete-profile-page{
+    min-height:100vh;
+    background:#081120;
+    padding:40px 0;
 }
 
-.document-card strong {
-  color: #f8fafc;
-
-  font-size: 15px;
-}
-
-.document-card span {
-  color: #94a3b8;
-
-  font-size: 13px;
-}
-
-.document-card > svg:last-child {
-  flex-shrink: 0;
-}
-
-
-/* =========================================================
-   MISSING DOCUMENT
-========================================================= */
-
-.document-missing {
-  cursor: default;
-
-  color: #64748b;
-
-  border-color: rgba(148, 163, 184, 0.14);
-
-  background: rgba(30, 41, 59, 0.4);
-}
-
-.document-missing:hover {
-  transform: none;
-
-  background: rgba(30, 41, 59, 0.4);
-
-  border-color: rgba(148, 163, 184, 0.14);
-}
-
-
-/* =========================================================
-   PROFILE LOADING
-========================================================= */
-
-.profile-loading {
-  min-height: 500px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  text-align: center;
-
-  color: #60a5fa;
-}
-
-.profile-loading h2 {
-  margin: 22px 0 8px;
-
-  color: #f8fafc;
-
-  font-size: 26px;
-}
-
-.profile-loading p {
-  margin: 0;
-
-  color: #94a3b8;
-}
-
-
-/* =========================================================
-   PROFILE ERROR
-========================================================= */
-
-.profile-error {
-  width: calc(100% - 40px);
-  max-width: 550px;
-
-  box-sizing: border-box;
-
-  margin: 80px auto;
-
-  padding: 45px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  text-align: center;
-
-  border: 1px solid rgba(248, 113, 113, 0.25);
-  border-radius: 25px;
-
-  background: rgba(15, 29, 51, 0.94);
-
-  color: #f87171;
-}
-
-.profile-error h2 {
-  margin: 22px 0 10px;
-
-  color: #f8fafc;
-
-  font-size: 27px;
-}
-
-.profile-error p {
-  margin: 0 0 25px;
-
-  color: #94a3b8;
-}
-
-.profile-error .primary-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  gap: 9px;
-
-  min-height: 48px;
-
-  padding: 0 20px;
-
-  border: none;
-  border-radius: 12px;
-
-  background: #2563eb;
-
-  color: #ffffff;
-
-  font-weight: 700;
-
-  cursor: pointer;
-}
-
-
-/* =========================================================
-   ATHLETE PROFILE TABLET
-========================================================= */
-
-@media (max-width: 1000px) {
-  .athlete-profile-page {
-    padding: 50px 30px 70px;
-  }
-
-  .profile-details-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-/* =========================================================
-   ATHLETE PROFILE MOBILE
-========================================================= */
-
-@media (max-width: 700px) {
-  .athlete-profile-page {
-    padding: 35px 18px 60px;
-  }
-
-  .profile-hero {
-    flex-direction: column;
-
-    align-items: flex-start;
-
-    padding: 25px;
-  }
-
-  .profile-image-wrapper {
-    width: 120px;
-    height: 120px;
-  }
-
-  .profile-hero > .status-badge {
-    top: 25px;
-    right: 25px;
-  }
-
-  .profile-hero-info h1 {
-    font-size: 34px;
-  }
-
-  .profile-contact-list {
-    flex-direction: column;
-
-    align-items: flex-start;
-  }
-
-  .profile-section {
-    padding: 24px;
-  }
-
-  .profile-information-grid {
-    grid-template-columns: 1fr;
-  }
+.athlete-profile-container{
+    width:min(1400px,95%);
+    margin:auto;
 }
-
 
-/* =========================================================
-   ATHLETE PROFILE SMALL MOBILE
-========================================================= */
-
-@media (max-width: 420px) {
-  .profile-hero {
-    padding: 20px;
-  }
-
-  .profile-hero > .status-badge {
-    position: static;
-
-    margin-top: 5px;
-  }
-
-  .profile-image-wrapper {
-    width: 100px;
-    height: 100px;
-  }
-
-  .profile-hero-info h1 {
-    font-size: 30px;
-  }
-
-  .profile-section {
-    padding: 20px;
-  }
-
-  .profile-section-title h2 {
-    font-size: 19px;
-  }
+.profile-back-button{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:12px 22px;
+    margin-bottom:28px;
+    border:none;
+    border-radius:12px;
+    background:#3b82f6;
+    color:#fff;
+    cursor:pointer;
+    font-weight:600;
+    transition:.3s;
 }
-/* =========================================================
-   ADMIN HEADER ACTIONS
-========================================================= */
 
-.admin-header-actions {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 14px;
-  flex-wrap: wrap;
+.profile-back-button:hover{
+    background:#2563eb;
 }
-
-
-/* =========================================================
-   LOGOUT BUTTON
-========================================================= */
-
-.admin-logout-button {
-  min-height: 58px;
-  padding: 0 24px;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 9px;
-
-  border: 1px solid rgba(248, 113, 113, 0.35);
-  border-radius: 15px;
-
-  background: rgba(239, 68, 68, 0.1);
-
-  color: #f87171;
-
-  font-family: inherit;
-  font-size: 15px;
-  font-weight: 700;
-
-  cursor: pointer;
 
-  transition:
-    transform 0.25s ease,
-    background 0.25s ease,
-    border-color 0.25s ease,
-    color 0.25s ease,
-    box-shadow 0.25s ease;
+.profile-hero{
+    display:flex;
+    align-items:center;
+    gap:30px;
+    padding:30px;
+    margin-bottom:30px;
+    border-radius:20px;
+    background:#111c30;
+    border:1px solid rgba(255,255,255,.08);
 }
 
-.admin-logout-button:hover {
-  transform: translateY(-2px);
-
-  background: #dc2626;
-
-  border-color: #dc2626;
-
-  color: #ffffff;
-
-  box-shadow:
-    0 15px 35px rgba(220, 38, 38, 0.25);
+.profile-image-wrapper{
+    width:170px;
+    height:170px;
+    flex-shrink:0;
 }
 
-.admin-logout-button:active {
-  transform: scale(0.97);
+.athlete-profile-image{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:18px;
+    border:4px solid #4f46e5;
 }
-
-
-/* =========================================================
-   RESPONSIVE ADMIN ACTIONS
-========================================================= */
-
-@media (max-width: 768px) {
-  .admin-header-actions {
-    width: 100%;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
 
-    gap: 10px;
-  }
-
-  .admin-header-actions .export-button,
-  .admin-header-actions .admin-logout-button {
-    width: 100%;
-    min-width: 0;
-  }
+.profile-image-placeholder{
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#1b2a44;
+    border-radius:18px;
+    color:#fff;
 }
 
-@media (max-width: 520px) {
-  .admin-header-actions {
-    grid-template-columns: 1fr;
-  }
+.profile-hero-info{
+    flex:1;
 }
-/* =========================================================
-   ADMIN AUTH LOADING
-========================================================= */
-
-.admin-auth-loading-page {
-  width: 100%;
-  min-height: calc(100vh - 88px);
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  padding: 30px;
 
-  box-sizing: border-box;
-
-  text-align: center;
-
-  background:
-    radial-gradient(
-      circle at 50% 30%,
-      rgba(37, 99, 235, 0.15),
-      transparent 35%
-    ),
-    #020817;
-
-  color: #60a5fa;
+.profile-hero-info h1{
+    color:#fff;
+    font-size:2.2rem;
+    margin:12px 0;
 }
-
-.admin-auth-loading-page h2 {
-  margin: 22px 0 8px;
 
-  color: #f8fafc;
-
-  font-size: 27px;
+.profile-contact-list{
+    display:flex;
+    flex-wrap:wrap;
+    gap:18px;
 }
-
-.admin-auth-loading-page p {
-  margin: 0;
 
-  color: #94a3b8;
+.profile-contact-list span{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    color:#cbd5e1;
 }
-/* =========================================================
-   ATHLETE APPROVAL CARD
-========================================================= */
-
-.approval-card {
-  width: 100%;
-  box-sizing: border-box;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  gap: 30px;
-
-  padding: 28px 30px;
-  margin-bottom: 30px;
-
-  border: 1px solid rgba(148, 163, 184, 0.17);
-  border-radius: 22px;
-
-  background: rgba(15, 29, 51, 0.94);
 
-  box-shadow:
-    0 20px 50px rgba(0, 0, 0, 0.16);
+.approval-card{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+    margin-bottom:35px;
+    padding:28px;
+    border-radius:18px;
+    background:#111c30;
 }
 
-.approval-card-info span {
-  color: #60a5fa;
-
-  font-size: 12px;
-  font-weight: 800;
-
-  letter-spacing: 2px;
+.approval-card-info span{
+    color:#60a5fa;
+    font-size:.8rem;
+    font-weight:700;
+    letter-spacing:1px;
 }
-
-.approval-card-info h2 {
-  margin: 10px 0 8px;
-
-  color: #f8fafc;
 
-  font-size: 24px;
+.approval-card-info h2{
+    color:#fff;
+    margin-top:8px;
 }
 
-.approval-card-info p {
-  max-width: 650px;
-
-  margin: 0;
-
-  color: #94a3b8;
-
-  line-height: 1.6;
+.approval-card-info p{
+    color:#94a3b8;
+    margin-top:8px;
 }
-
-.approval-actions {
-  display: flex;
-  align-items: center;
-
-  gap: 12px;
 
-  flex-shrink: 0;
+.approval-actions{
+    display:flex;
+    gap:15px;
 }
 
 .approve-athlete-button,
-.reject-athlete-button {
-  min-height: 50px;
+.reject-athlete-button{
+    border:none;
+    padding:14px 24px;
+    border-radius:12px;
+    color:#fff;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:700;
+    transition:.3s;
+}
 
-  padding: 0 20px;
+.approve-athlete-button{
+    background:#22c55e;
+}
 
+.approve-athlete-button:hover{
+    background:#16a34a;
+}
+
+.reject-athlete-button{
+    background:#ef4444;
+}
+
+.reject-athlete-button:hover{
+    background:#dc2626;
+}
+
+.profile-details-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(420px,1fr));
+    gap:28px;
+}
+
+.profile-section{
+    background:#111c30;
+    border-radius:18px;
+    padding:25px;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.profile-section-title{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:24px;
+    color:#fff;
+}
+
+.profile-section-title h2{
+    margin:0;
+    font-size:1.35rem;
+}
+
+.profile-information-grid{
+    display:grid;
+    gap:16px;
+}
+
+.profile-detail-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:14px 18px;
+    border-radius:12px;
+    background:#17253c;
+}
+
+.profile-detail-item span{
+    color:#94a3b8;
+    font-size:.92rem;
+    font-weight:600;
+}
+
+.profile-detail-item strong{
+    color:#fff;
+    font-size:1rem;
+    text-align:right;
+}
+
+.document-list{
+    display:grid;
+    gap:18px;
+}
+
+.document-card{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    padding:18px;
+    border-radius:14px;
+    text-decoration:none;
+    color:#fff;
+    background:#17253c;
+    transition:.3s;
+}
+
+.document-card:hover{
+    transform:translateY(-3px);
+    background:#223456;
+}
+
+.document-card div{
+    flex:1;
+}
+
+.document-card strong{
+    display:block;
+}
+
+.document-card span{
+    color:#94a3b8;
+}
+
+.document-missing{
+    opacity:.6;
+    cursor:not-allowed;
+}
+
+.profile-loading,
+.profile-error{
+    max-width:600px;
+    margin:120px auto;
+    text-align:center;
+    padding:40px;
+    border-radius:20px;
+    background:#111c30;
+    color:#fff;
+}
+
+@media(max-width:900px){
+
+.profile-hero{
+    flex-direction:column;
+    text-align:center;
+}
+
+.profile-contact-list{
+    justify-content:center;
+}
+
+.approval-card{
+    flex-direction:column;
+}
+
+.approval-actions{
+    width:100%;
+    flex-direction:column;
+}
+
+.approve-athlete-button,
+.reject-athlete-button{
+    width:100%;
+    justify-content:center;
+}
+
+.profile-details-grid{
+    grid-template-columns:1fr;
+}
+
+.profile-detail-item{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:6px;
+}
+
+.profile-detail-item strong{
+    text-align:left;
+}
+}
+
+
+
+
+
+
+
+
+:root {
+  --admin-bg: #081120;
+  --admin-surface: rgba(17, 29, 49, 0.82);
+  --admin-surface-muted: rgba(255, 255, 255, 0.045);
+  --admin-text: #f1f5f9;
+  --admin-muted: #98a8c1;
+  --admin-border: rgba(148, 163, 184, 0.16);
+  --admin-primary: #4f8cff;
+  --admin-primary-dark: #3473e5;
+  --admin-sidebar: #0b1528;
+  --admin-sidebar-hover: rgba(255, 255, 255, 0.1);
+  --admin-danger: #fb7185;
+  --admin-success: #4ade80;
+  --admin-warning: #fbbf24;
+  --admin-shadow: 0 18px 45px rgba(0, 0, 0, 0.3);
+}
+
+* { box-sizing: border-box; }
+
+.admin-dashboard-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 92% 3%, rgba(79, 140, 255, 0.14), transparent 27rem),
+    radial-gradient(circle at 35% 100%, rgba(80, 70, 229, 0.12), transparent 31rem),
+    var(--admin-bg);
+  color: var(--admin-text);
+}
+
+.admin-dashboard-container {
+  width: min(100%, 1440px);
+  margin: 0 auto;
+  padding: 36px 40px 48px;
+}
+
+/* Sidebar */
+.admin-sidebar {
+  position: sticky;
+  top: 0;
+  width: 248px;
+  min-width: 248px;
+  height: 100vh;
+  padding: 28px 16px;
+  display: flex;
+  flex-direction: column;
+  color: #e5edf9;
+  background: linear-gradient(180deg, #142a4c 0%, var(--admin-sidebar) 72%);
+  box-shadow: 8px 0 28px rgba(15, 23, 42, 0.1);
+}
+
+.sidebar-header { padding: 4px 12px 28px; border-bottom: 1px solid rgba(255, 255, 255, 0.12); }
+.sidebar-header h2 { margin: 0; font-size: 1.25rem; font-weight: 800; letter-spacing: -0.02em; color: #fff; }
+.sidebar-header p { margin: 5px 0 0; font-size: 0.8rem; color: #9aafd0; }
+.sidebar-menu { display: flex; flex: 1; flex-direction: column; gap: 8px; padding-top: 24px; }
+
+.sidebar-item {
+  width: 100%;
+  min-height: 46px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 13px;
+  border: 0;
+  border-radius: 10px;
+  color: #d8e3f3;
+  background: transparent;
+  font: inherit;
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.sidebar-item:hover, .sidebar-item.active { color: #fff; background: linear-gradient(90deg, rgba(79, 140, 255, 0.28), rgba(79, 140, 255, 0.08)); box-shadow: inset 3px 0 #66a0ff; }
+.sidebar-item:active { transform: translateY(1px); }
+.sidebar-button { appearance: none; }
+.sidebar-count { margin-left: auto; padding: 2px 8px; border-radius: 999px; color: #e6efff; background: rgba(79, 140, 255, 0.44); font-size: 0.72rem; }
+.logout { margin-top: auto; color: #fecaca; }
+.logout:hover { color: #fff; background: rgba(220, 38, 38, 0.35); }
+
+/* Header and cards */
+.admin-dashboard-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; margin-bottom: 28px; }
+.registration-label { display: inline-block; margin-bottom: 9px; color: #78a8ff; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.11em; }
+.admin-dashboard-header h1 { margin: 0; font-size: clamp(1.6rem, 2.5vw, 2.25rem); line-height: 1.15; letter-spacing: -0.035em; }
+.admin-dashboard-header p { margin: 9px 0 0; color: var(--admin-muted); }
+.admin-header-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.glass-card, .dashboard-stat-card, .athlete-table-card {
+  background: var(--admin-surface);
+  border: 1px solid var(--admin-border);
+  border-radius: 16px;
+  box-shadow: var(--admin-shadow);
+  backdrop-filter: blur(16px);
+}
+
+.dashboard-stat-card { width: min(100%, 330px); display: flex; align-items: center; gap: 16px; margin-bottom: 28px; padding: 20px; }
+.dashboard-stat-icon { width: 52px; height: 52px; display: grid; place-items: center; border: 1px solid rgba(116, 169, 255, 0.2); border-radius: 14px; color: #8db7ff; background: linear-gradient(145deg, rgba(79, 140, 255, 0.3), rgba(99, 102, 241, 0.12)); }
+.dashboard-stat-content { display: grid; gap: 3px; }
+.dashboard-stat-content span { color: var(--admin-muted); font-size: 0.85rem; font-weight: 600; }
+.dashboard-stat-content strong { font-size: 1.75rem; letter-spacing: -0.04em; }
+
+/* Buttons */
+.export-button, .admin-logout-button, .view-athlete-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
-  gap: 9px;
-
-  border-radius: 13px;
-
-  font-family: inherit;
-  font-size: 14px;
+  gap: 8px;
+  min-height: 42px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  padding: 0 14px;
+  font: inherit;
+  font-size: 0.88rem;
   font-weight: 700;
-
   cursor: pointer;
-
-  transition:
-    transform 0.25s ease,
-    background 0.25s ease,
-    color 0.25s ease,
-    box-shadow 0.25s ease;
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
 }
+.export-button { color: #fff; background: linear-gradient(135deg, #4f8cff, #5966ef); box-shadow: 0 8px 18px rgba(64, 119, 243, 0.25); }
+.export-button:hover:not(:disabled) { background: linear-gradient(135deg, #6399ff, #6d78ff); box-shadow: 0 10px 22px rgba(64, 119, 243, 0.38); }
+.admin-logout-button { color: #fda4af; border-color: rgba(251, 113, 133, 0.35); background: rgba(251, 113, 133, 0.06); }
+.admin-logout-button:hover { color: #fff; border-color: #e11d48; background: #e11d48; }
+.view-athlete-button { min-height: 34px; padding: 0 10px; color: #9bc0ff; border-color: rgba(96, 165, 250, 0.32); background: rgba(59, 130, 246, 0.1); font-size: 0.8rem; }
+.view-athlete-button:hover { color: #fff; border-color: var(--admin-primary); background: var(--admin-primary); }
+.export-button:active, .admin-logout-button:active, .view-athlete-button:active { transform: translateY(1px); }
+button:disabled { opacity: 0.55; cursor: not-allowed; box-shadow: none; }
 
-.approve-athlete-button {
-  border: 1px solid rgba(74, 222, 128, 0.35);
+/* Table */
+.athlete-table-card { overflow: hidden; }
+.athlete-table-header { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 22px 24px; border-bottom: 1px solid var(--admin-border); }
+.athlete-table-header h2 { margin: 0; font-size: 1.08rem; letter-spacing: -0.02em; }
+.athlete-table-header p { margin: 5px 0 0; color: var(--admin-muted); font-size: 0.85rem; }
+.athlete-search { width: min(100%, 310px); display: flex; align-items: center; gap: 9px; padding: 0 12px; border: 1px solid var(--admin-border); border-radius: 9px; color: var(--admin-muted); background: rgba(3, 10, 24, 0.38); transition: border-color 160ms ease, box-shadow 160ms ease; }
+.athlete-search:focus-within { border-color: #609dff; box-shadow: 0 0 0 3px rgba(79, 140, 255, 0.18); }
+.athlete-search input { width: 100%; height: 42px; border: 0; outline: 0; color: var(--admin-text); background: transparent; font: inherit; font-size: 0.9rem; }
+.athlete-search input::placeholder { color: #94a3b8; }
+.athlete-table-wrapper { width: 100%; overflow-x: auto; }
+.athlete-table { width: 100%; min-width: 850px; border-collapse: collapse; text-align: left; }
+.athlete-table th { padding: 13px 20px; color: var(--admin-muted); background: var(--admin-surface-muted); font-size: 0.72rem; font-weight: 800; letter-spacing: 0.055em; text-transform: uppercase; white-space: nowrap; }
+.athlete-table td { padding: 17px 20px; border-top: 1px solid var(--admin-border); color: #b9c7db; font-size: 0.9rem; vertical-align: middle; }
+.athlete-table td strong { color: var(--admin-text); }
+.athlete-table tbody tr { transition: background 150ms ease; }
+.athlete-table tbody tr:hover { background: rgba(79, 140, 255, 0.075); }
 
-  background: rgba(34, 197, 94, 0.1);
+.status-badge { display: inline-flex; align-items: center; border-radius: 999px; padding: 5px 9px; font-size: 0.72rem; font-weight: 800; line-height: 1; text-transform: capitalize; }
+.status-pending { color: #fcd34d; background: rgba(245, 158, 11, 0.14); }
+.status-approved, .status-active, .status-paid { color: #86efac; background: rgba(34, 197, 94, 0.14); }
+.status-rejected, .status-failed, .status-cancelled { color: #fda4af; background: rgba(244, 63, 94, 0.14); }
 
-  color: #4ade80;
-}
-
-.approve-athlete-button:hover:not(:disabled) {
-  transform: translateY(-2px);
-
-  background: #16a34a;
-
-  color: #ffffff;
-
-  box-shadow:
-    0 15px 30px rgba(22, 163, 74, 0.25);
-}
-
-.reject-athlete-button {
-  border: 1px solid rgba(248, 113, 113, 0.35);
-
-  background: rgba(239, 68, 68, 0.1);
-
-  color: #f87171;
-}
-
-.reject-athlete-button:hover:not(:disabled) {
-  transform: translateY(-2px);
-
-  background: #dc2626;
-
-  color: #ffffff;
-
-  box-shadow:
-    0 15px 30px rgba(220, 38, 38, 0.25);
-}
-
-.approve-athlete-button:disabled,
-.reject-athlete-button:disabled {
-  opacity: 0.45;
-
-  cursor: not-allowed;
-
-  transform: none;
-}
+/* States */
+.admin-error { display: flex; align-items: center; gap: 10px; margin: 18px 24px; padding: 13px 15px; border: 1px solid rgba(251, 113, 133, 0.35); border-radius: 10px; color: #fecdd3; background: rgba(190, 24, 93, 0.12); font-size: 0.9rem; }
+.admin-loading, .admin-empty { display: grid; justify-items: center; gap: 11px; padding: 62px 24px; color: var(--admin-muted); text-align: center; }
+.admin-loading p, .admin-empty p { margin: 0; }
+.admin-empty svg { color: #94a3b8; }
+.admin-empty h3 { margin: 4px 0 0; color: var(--admin-text); font-size: 1.05rem; }
+.loading-icon { color: var(--admin-primary); animation: admin-spin 850ms linear infinite; }
+@keyframes admin-spin { to { transform: rotate(360deg); } }
 
 @media (max-width: 900px) {
-  .approval-card {
-    flex-direction: column;
-
-    align-items: stretch;
-  }
-
-  .approval-actions {
-    width: 100%;
-  }
-
-  .approval-actions button {
-    flex: 1;
-  }
+  .admin-sidebar { width: 210px; min-width: 210px; }
+  .admin-dashboard-container { padding: 28px 24px 40px; }
+  .admin-dashboard-header { align-items: stretch; flex-direction: column; }
 }
 
-@media (max-width: 600px) {
-  .approval-card {
-    padding: 24px;
-  }
+@media (max-width: 700px) {
+  .admin-dashboard-page > div { display: block !important; }
+  .admin-sidebar { position: static; width: 100%; min-width: 0; height: auto; padding: 16px; }
+  .sidebar-header { display: flex; align-items: baseline; justify-content: space-between; padding: 3px 6px 14px; }
+  .sidebar-header p { margin: 0; }
+  .sidebar-menu { display: grid; grid-template-columns: repeat(2, 1fr); gap: 7px; padding-top: 14px; }
+  .sidebar-item { min-height: 42px; padding: 9px; font-size: 0.82rem; }
+  .logout { margin-top: 0; }
+  .admin-dashboard-container { padding: 24px 16px 32px; }
+  .admin-header-actions { width: 100%; }
+  .admin-header-actions button { flex: 1; }
+  .dashboard-stat-card { width: 100%; }
+  .athlete-table-header { align-items: stretch; flex-direction: column; padding: 18px; }
+  .athlete-search { width: 100%; }
+  .admin-error { margin: 16px 18px; }
+}
 
-  .approval-actions {
-    flex-direction: column;
-  }
+@media (max-width: 400px) {
+  .sidebar-menu { grid-template-columns: 1fr; }
+  .admin-dashboard-header h1 { font-size: 1.55rem; }
+  .admin-header-actions { flex-direction: column; }
+}
 
-  .approval-actions button {
-    width: 100%;
-  }
+
+.dashboard-cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:24px;
+    margin:30px 0;
+}
+
+.clickable-card{
+    cursor:pointer;
+    transition:.3s;
+}
+
+.clickable-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 15px 35px rgba(0,0,0,.2);
+}
+
+.profile-card{
+    padding:40px;
+}
+
+.profile-header{
+    display:flex;
+    align-items:center;
+    gap:30px;
+    margin-bottom:40px;
+}
+
+.profile-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.profile-grid div{
+    background:#1b2435;
+    padding:20px;
+    border-radius:12px;
+}
+
+.status-buttons{
+    display:flex;
+    gap:15px;
+    margin-top:35px;
+    flex-wrap:wrap;
+}
+
+.approve-btn,
+.reject-btn,
+.suspend-btn{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    border:none;
+    padding:12px 22px;
+    border-radius:10px;
+    color:#fff;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.approve-btn{
+    background:#16a34a;
+}
+
+.reject-btn{
+    background:#dc2626;
+}
+
+.suspend-btn{
+    background:#ea580c;
+}
+
+
+.profile-divider{
+margin:30px 0;
+border:none;
+border-top:1px solid #ddd;
+}
+
+.assignment-section{
+margin-top:20px;
+}
+
+.assignment-section h3{
+margin-bottom:15px;
+}
+
+.assignment-card{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px;
+margin-bottom:12px;
+background:#f8fafc;
+border-radius:12px;
+border:1px solid #ddd;
+}
+
+.assignment-card h4{
+margin:0;
+font-size:16px;
+}
+
+.assignment-card p{
+margin:5px 0 0;
+color:#666;
+}
+
+.assignment-checkbox{
+display:flex;
+align-items:center;
+gap:10px;
+margin-bottom:12px;
+cursor:pointer;
+font-size:15px;
+}
+
+.assignment-checkbox input{
+width:18px;
+height:18px;
+cursor:pointer;
+}
+
+.assignment-section .approve-btn{
+margin-top:20px;
 }

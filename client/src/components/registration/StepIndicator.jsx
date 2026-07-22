@@ -15,6 +15,8 @@ const steps = [
   { title: "Club", icon: Shield },
   { title: "Competition", icon: Trophy },
   { title: "Documents", icon: FileUp },
+  { title: "Consent", icon: FileUp },
+  { title: "Payment", icon: FileUp },
 ];
 
 function StepIndicator({ currentStep }) {

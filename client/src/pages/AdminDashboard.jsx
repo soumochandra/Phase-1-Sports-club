@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Sidebar from "../components/admin/Sidebar";
+
 
 import { signOut } from "firebase/auth";
 
@@ -114,6 +116,12 @@ function AdminDashboard() {
       "Club Name",
       "Representing State",
       "Competition Applied",
+      "Category",
+      "Payment Method",
+      "Payment Status",
+      "Insurance Provider",
+      "Insurance Policy Number",
+      "Insurance Valid Till",
       "Status",
     ];
 
@@ -137,6 +145,12 @@ function AdminDashboard() {
       athlete.clubName,
       athlete.representingState,
       athlete.competitionApplied,
+      athlete.category,
+      athlete.paymentMethod,
+      athlete.paymentStatus,
+      athlete.insuranceProvider,
+      athlete.insurancePolicyNumber,
+      athlete.insuranceValidTill,
       athlete.status,
     ]);
 
@@ -196,7 +210,22 @@ function AdminDashboard() {
 
   return (
     <main className="admin-dashboard-page">
-      <div className="admin-dashboard-container">
+      <div
+  style={{
+    display: "flex",
+    minHeight: "100vh",
+  }}
+>
+  <Sidebar
+    totalAthletes={athletes.length}
+    onExport={handleExport}
+    onLogout={handleLogout}
+  />
+
+  <div
+    className="admin-dashboard-container"
+    style={{ flex: 1 }}
+  >
         <section className="admin-dashboard-header">
           <div>
             <span className="registration-label">
@@ -208,7 +237,10 @@ function AdminDashboard() {
             <p>
               View and manage athlete registrations.
             </p>
-          </div>
+          
+  <h3>Coach Management</h3>
+  <p>View and manage all coaches</p>
+</div>
 
           <div className="admin-header-actions">
             <button
@@ -232,17 +264,34 @@ function AdminDashboard() {
           </div>
         </section>
 
-        <section className="dashboard-stat-card glass-card">
-          <div className="dashboard-stat-icon">
-            <Users size={25} />
-          </div>
+       <section className="dashboard-cards">
 
-          <div className="dashboard-stat-content">
-            <span>Total Athletes</span>
+  <div className="dashboard-stat-card glass-card">
+    <div className="dashboard-stat-icon">
+      <Users size={25} />
+    </div>
 
-            <strong>{athletes.length}</strong>
-          </div>
-        </section>
+    <div className="dashboard-stat-content">
+      <span>Total Athletes</span>
+      <strong>{athletes.length}</strong>
+    </div>
+  </div>
+
+  <div
+    className="dashboard-stat-card glass-card clickable-card"
+    onClick={() => navigate("/admin/coaches")}
+  >
+    <div className="dashboard-stat-icon">
+      <Users size={25} />
+    </div>
+
+    <div className="dashboard-stat-content">
+      <span>Coach Management</span>
+      <strong>Manage Coaches</strong>
+    </div>
+  </div>
+
+</section>
 
         <section className="athlete-table-card glass-card">
           <div className="athlete-table-header">
@@ -308,6 +357,8 @@ function AdminDashboard() {
 
                     <th>Competition</th>
 
+                    <th>Payment</th>
+
                     <th>Status</th>
 
                     <th>Action</th>
@@ -336,6 +387,10 @@ function AdminDashboard() {
                         <td>
                           {athlete.competitionApplied ||
                             "-"}
+                        </td>
+
+                        <td>
+                          {athlete.paymentStatus || "pending"}
                         </td>
 
                         <td>
@@ -371,6 +426,7 @@ function AdminDashboard() {
             </div>
           )}
         </section>
+      </div>
       </div>
     </main>
   );

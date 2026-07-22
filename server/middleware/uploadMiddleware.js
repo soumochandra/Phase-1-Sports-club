@@ -11,22 +11,42 @@ const fileFilter = (req, file, cb) => {
 
     if (!allowedImages.includes(file.mimetype)) {
       return cb(
+        new Error("Profile image must be JPG or PNG")
+      );
+    }
+
+    return cb(null, true);
+  }
+
+  const allowedDocumentFields = [
+    // Athlete
+    "birthCertificate",
+    "identityDocument",
+    "schoolBonafideCertificate",
+    "insuranceDocument",
+
+    // Coach
+    "coachingCertificate",
+  ];
+
+  if (
+    allowedDocumentFields.includes(file.fieldname)
+  ) {
+    const allowedTypes = [
+      "application/pdf",
+      "image/jpeg",
+      "image/png",
+    ];
+
+    if (!allowedTypes.includes(file.mimetype)) {
+      return cb(
         new Error(
-          "Profile image must be JPG or PNG"
+          "Only PDF, JPG or PNG files are allowed."
         )
       );
     }
-  }
 
-  if (
-    file.fieldname === "birthCertificate" ||
-    file.fieldname === "identityDocument"
-  ) {
-    if (file.mimetype !== "application/pdf") {
-      return cb(
-        new Error("Documents must be PDF files")
-      );
-    }
+    return cb(null, true);
   }
 
   cb(null, true);
@@ -40,11 +60,14 @@ const upload = multer({
   },
 });
 
-const athleteUpload = upload.fields([
+const uploadMiddleware = upload.fields([
+  // Common
   {
     name: "profileImage",
     maxCount: 1,
   },
+
+  // Athlete
   {
     name: "birthCertificate",
     maxCount: 1,
@@ -53,6 +76,20 @@ const athleteUpload = upload.fields([
     name: "identityDocument",
     maxCount: 1,
   },
+  {
+    name: "schoolBonafideCertificate",
+    maxCount: 1,
+  },
+  {
+    name: "insuranceDocument",
+    maxCount: 1,
+  },
+
+  // Coach
+  {
+    name: "coachingCertificate",
+    maxCount: 1,
+  },
 ]);
 
-module.exports = athleteUpload;
+module.exports = uploadMiddleware;

@@ -11,6 +11,8 @@ function RegistrationSuccess() {
   const location = useLocation();
 
   const athleteId = location.state?.athleteId;
+  const portalUserId = location.state?.portalUserId;
+  const portalPassword = location.state?.portalPassword;
 
   return (
     <main className="success-page">
@@ -35,6 +37,20 @@ function RegistrationSuccess() {
             <span>Registration ID</span>
 
             <strong>{athleteId}</strong>
+          </div>
+        )}
+
+        {portalUserId && (
+          <div className="registration-id" style={{ marginTop: "0.75rem" }}>
+            <span>Portal User ID</span>
+            <strong>{portalUserId}</strong>
+          </div>
+        )}
+
+        {portalPassword && (
+          <div className="registration-id" style={{ marginTop: "0.75rem" }}>
+            <span>Portal Password</span>
+            <strong>{portalPassword}</strong>
           </div>
         )}
 

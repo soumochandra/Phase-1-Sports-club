@@ -67,3 +67,332 @@ Developer
 Developed by Soumo
 
 B.Tech Computer Science and Engineering
+
+
+
+
+
+server
+│
+├── config
+│      firebaseAdmin.js
+│
+├── controllers
+│      adminController.js
+│      athleteController.js
+│      authController.js
+│
+├── middleware
+│      adminAuth.js
+│      authMiddleware.js
+│      uploadMiddleware.js
+│
+├── routes
+│      adminRoutes.js
+│      athleteRoutes.js
+│      authRoutes.js
+│
+├── services
+│      athleteService.js
+│      excelService.js
+│      imageService.js
+│      storageService.js
+│
+├── utils
+│      validation.js
+│      imageProcessor.js
+│
+├── uploads
+│
+├── .env.example
+├── package.json
+└── server.js
+
+
+in phase 2--------
+
+                    SPORTS CLUB MANAGEMENT SYSTEM
+
+                                 │
+                                 ▼
+                    ┌────────────────────────┐
+                    │      Landing Page      │
+                    └────────────────────────┘
+                                 │
+          ┌──────────────────────┼──────────────────────┐
+          │                      │                      │
+          ▼                      ▼                      ▼
+ ┌────────────────┐     ┌────────────────┐     ┌────────────────┐
+ │ Athlete Portal │     │ Coach Portal   │     │ Admin Portal   │
+ └────────────────┘     └────────────────┘     └────────────────┘
+          │                      │                      │
+          ▼                      ▼                      ▼
+ Athlete Registration     Coach Registration    Firebase Login
+          │                      │                      │
+          ▼                      ▼                      ▼
+ Upload Documents        Upload Documents      Admin Dashboard
+          │                      │                      │
+          ▼                      ▼                      ▼
+ Store in Firestore      Store in Firestore    Manage Athletes
+          │                      │              Manage Coaches
+          │                      │              Approve / Reject
+          │                      │              Suspend Users
+          │                      │                      │
+          └──────────────┬───────┘                      │
+                         ▼                              ▼
+                 Athlete-Coach Assignment
+                         │
+          ┌──────────────┴──────────────┐
+          ▼                             ▼
+ Coach Dashboard                Athlete Dashboard
+          │                             │
+          ▼                             ▼
+ View Assigned Athletes         View Assigned Coach
+
+
+ SportsSync – Sports Club Management System
+Project Overview
+SportsSync is a web-based Sports Club Management System developed to simplify the management of athletes, coaches, and administrators. The system provides a centralized platform where athletes and coaches can register, administrators can verify registrations, manage users, assign athletes to coaches, and monitor the complete registration process. The application is built using React.js, Node.js, Express.js, and Firebase Firestore, ensuring secure authentication, efficient data management, and a user-friendly interface.
+
+
+
+                   Frontend (React.js)
+                           │
+                           ▼
+                  REST API (Axios)
+                           │
+                           ▼
+              Backend (Node.js + Express.js)
+                           │
+          ┌────────────────┴────────────────┐
+          ▼                                 ▼
+ Firebase Authentication         Firebase Firestore
+          │                                 │
+          ▼                                 ▼
+   Admin Authentication          Athletes Collection
+                                 Coaches Collection
+                                 Admin Collection
+
+
+
+                                 Athlete Registration Form
+            │
+            ▼
+Personal Details
+            │
+            ▼
+Guardian Details
+            │
+            ▼
+Address Details
+            │
+            ▼
+Club Details
+            │
+            ▼
+Competition Details
+            │
+            ▼
+Document Upload
+            │
+            ▼
+Validation
+            │
+            ▼
+Portal ID Generated
+            │
+            ▼
+Password Encrypted
+            │
+            ▼
+Firestore Database
+            │
+            ▼
+Registration Successful
+
+
+
+
+
+Coach Registration Form
+            │
+            ▼
+Personal Information
+            │
+            ▼
+Qualification Details
+            │
+            ▼
+Experience Details
+            │
+            ▼
+Sport Specialization
+            │
+            ▼
+Upload Documents
+            │
+            ▼
+Validation
+            │
+            ▼
+Portal ID Generated
+            │
+            ▼
+Password Encrypted
+            │
+            ▼
+Firestore Database
+
+
+
+
+
+Admin Login
+      │
+      ▼
+Firebase Authentication
+      │
+      ▼
+Admin Dashboard
+      │
+      ├──────────────► Athlete Management
+      │                   │
+      │                   ├── View Athlete
+      │                   ├── Approve
+      │                   ├── Reject
+      │                   └── Suspend
+      │
+      ├──────────────► Coach Management
+      │                   │
+      │                   ├── View Coach
+      │                   ├── Approve
+      │                   ├── Reject
+      │                   └── Suspend
+      │
+      └──────────────► Coach Assignment
+                          │
+                          ├── View Available Athletes
+                          ├── Assign Athletes
+                          ├── View Assigned Athletes
+                          └── Remove Assignment
+
+
+
+
+
+
+
+                                          User Login
+                    │
+                    ▼
+          Enter Credentials
+                    │
+        ┌───────────┴───────────┐
+        ▼                       ▼
+ Admin Login            Athlete / Coach Login
+        │                       │
+        ▼                       ▼
+ Firebase Auth          Portal Authentication
+        │                       │
+        ▼                       ▼
+ Token Verification    Password Verification
+        │                       │
+        ▼                       ▼
+ Dashboard Access       Dashboard Access
+
+
+
+
+ Technologies Used
+Frontend
+React.js
+React Router DOM
+Axios
+CSS3
+Lucide React Icons
+Backend
+Node.js
+Express.js
+Multer
+Sharp
+Firebase Admin SDK
+Database
+Firebase Firestore
+Authentication
+Firebase Authentication
+Firebase Admin SDK
+Image Processing
+Sharp
+File Upload
+Multer
+Major Modules
+Athlete Module
+Athlete Registration
+Athlete Login
+Athlete Dashboard
+Athlete Profile
+Competition Registration
+Document Upload
+Coach Module
+Coach Registration
+Coach Login
+Coach Dashboard
+Coach Profile
+Sport Specialization
+Qualification Management
+Admin Module
+Admin Login
+Athlete Management
+Coach Management
+Registration Approval
+Athlete-Coach Assignment
+User Status Management
+Current Features
+Multi-step Athlete Registration
+Coach Registration
+Local File Upload System
+Automatic Age Calculation
+Age Group Classification
+Duplicate Registration Prevention
+Secure Password Hashing
+Firebase Authentication
+Firebase Firestore Integration
+Athlete–Coach Assignment
+Admin Dashboard
+Athlete Dashboard
+Coach Dashboard
+Responsive User Interface
+Future Scope
+Current System
+      │
+      ▼
+Attendance Management
+      │
+      ▼
+Training Schedule
+      │
+      ▼
+Performance Tracking
+      │
+      ▼
+Competition Management
+      │
+      ▼
+Reports & Analytics
+      │
+      ▼
+Notification System
+      │
+      ▼
+Email Alerts
+      │
+      ▼
+Mobile Application
+Conclusion
+SportsSync provides a secure, scalable, and user-friendly solution for managing sports clubs digitally.
+ By integrating athlete registration, coach management, administrator control,
+  and athlete–coach assignment into a single platform, the system reduces manual work, 
+  improves data organization, and enhances operational efficiency. 
+ The modular architecture also allows future enhancements such as attendance tracking,
+  performance monitoring, competition management, analytics, and notification services,
+   making it suitable for real-world sports organizations as well as academic demonstration.

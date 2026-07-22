@@ -1,7 +1,4 @@
-const {
-  adminAuth,
-  db,
-} = require("../config/firebaseAdmin");
+const { adminAuth, db } = require("../config/firebaseAdmin");
 
 const verifyAdmin = async (req, res, next) => {
   try {
@@ -20,8 +17,7 @@ const verifyAdmin = async (req, res, next) => {
 
     const token = authorization.split(" ")[1];
 
-    const decodedToken =
-      await adminAuth.verifyIdToken(token);
+   const decodedToken = await adminAuth.verifyIdToken(token);
 
     console.log("Logged in UID:", decodedToken.uid);
     console.log("Logged in email:", decodedToken.email);

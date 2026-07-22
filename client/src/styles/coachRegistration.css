@@ -1,0 +1,173 @@
+.coach-registration-page {
+  min-height: 100vh;
+  padding: 48px 20px;
+  background:
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.28), transparent 35%),
+    linear-gradient(135deg, #081225, #10295a);
+}
+
+.coach-registration-card {
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  padding: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 24px;
+  background: rgba(15, 30, 60, 0.82);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+  color: #f8fafc;
+}
+
+.coach-registration-header {
+  margin-bottom: 34px;
+}
+
+.coach-registration-header span {
+  color: #93c5fd;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.coach-registration-header h1 {
+  margin: 10px 0;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+}
+
+.coach-registration-header p {
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+.coach-registration-form h2 {
+  margin: 34px 0 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  color: #bfdbfe;
+  font-size: 1.2rem;
+}
+
+.coach-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.coach-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #dbeafe;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.coach-form-field input,
+.coach-form-field select {
+  width: 100%;
+  min-height: 46px;
+  padding: 11px 13px;
+  border: 1px solid rgba(191, 219, 254, 0.24);
+  border-radius: 10px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.08);
+  color: #f8fafc;
+  font: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.coach-form-field select option {
+  background: #10295a;
+  color: #f8fafc;
+}
+
+.coach-form-field input[type="file"] {
+  padding: 9px;
+  cursor: pointer;
+}
+
+.coach-form-field input:focus,
+.coach-form-field select:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.18);
+}
+
+.coach-registration-error {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 22px;
+  padding: 14px 16px;
+  border: 1px solid rgba(248, 113, 113, 0.5);
+  border-radius: 12px;
+  background: rgba(127, 29, 29, 0.35);
+  color: #fecaca;
+}
+
+.coach-register-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  margin-top: 34px;
+  padding: 15px 20px;
+  border: 0;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #2563eb, #0ea5e9);
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 800;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.coach-register-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(37, 99, 235, 0.38);
+}
+
+.coach-register-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.coach-registration-login {
+  margin: 24px 0 0;
+  text-align: center;
+  color: #cbd5e1;
+}
+
+.coach-registration-login a {
+  color: #93c5fd;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.coach-registration-login a:hover {
+  text-decoration: underline;
+}
+
+.loading-icon {
+  animation: coach-spin 0.9s linear infinite;
+}
+
+@keyframes coach-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 700px) {
+  .coach-registration-page {
+    padding: 24px 14px;
+  }
+
+  .coach-registration-card {
+    padding: 26px 20px;
+    border-radius: 18px;
+  }
+
+  .coach-form-grid {
+    grid-template-columns: 1fr;
+  }
+}

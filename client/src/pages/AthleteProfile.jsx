@@ -29,7 +29,7 @@ import {
 
 import "../styles/admin.css";
 
-const API_URL = "http://localhost:5000";
+const API_URL = "http://localhost:5002";
 
 function AthleteProfile() {
   const navigate = useNavigate();
@@ -401,6 +401,36 @@ function AthleteProfile() {
             />
           </ProfileSection>
 
+          <ProfileSection
+            icon={<FileText size={22} />}
+            title="Payment & Insurance"
+          >
+            <DetailItem
+              label="Payment Method"
+              value={athlete.paymentMethod || "-"}
+            />
+
+            <DetailItem
+              label="Payment Status"
+              value={athlete.paymentStatus || "pending"}
+            />
+
+            <DetailItem
+              label="Insurance Provider"
+              value={athlete.insuranceProvider || "-"}
+            />
+
+            <DetailItem
+              label="Insurance Policy"
+              value={athlete.insurancePolicyNumber || "-"}
+            />
+
+            <DetailItem
+              label="Insurance Valid Till"
+              value={athlete.insuranceValidTill || "-"}
+            />
+          </ProfileSection>
+
           <section className="profile-section glass-card">
             <div className="profile-section-title">
               <FileText size={22} />
@@ -410,17 +440,25 @@ function AthleteProfile() {
             <div className="document-list">
               <DocumentButton
                 title="Birth Certificate"
-                filePath={
-                  athlete.birthCertificate
-                }
+                filePath={athlete.birthCertificate}
                 getFileUrl={getFileUrl}
               />
 
               <DocumentButton
                 title="Identity Document"
-                filePath={
-                  athlete.identityDocument
-                }
+                filePath={athlete.identityDocument}
+                getFileUrl={getFileUrl}
+              />
+
+              <DocumentButton
+                title="School Bonafide"
+                filePath={athlete.schoolBonafideCertificate}
+                getFileUrl={getFileUrl}
+              />
+
+              <DocumentButton
+                title="Insurance Document"
+                filePath={athlete.insuranceDocument}
                 getFileUrl={getFileUrl}
               />
             </div>

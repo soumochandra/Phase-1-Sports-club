@@ -1,0 +1,1355 @@
+/* ===========================================
+   Google Font
+=========================================== */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* ===========================================
+   Root Variables
+=========================================== */
+
+:root{
+
+--bg:#09090b;
+--bg2:#111827;
+--card:rgba(255,255,255,.06);
+
+--primary:#3b82f6;
+--secondary:#60a5fa;
+
+--success:#22c55e;
+--danger:#ef4444;
+
+--text:#ffffff;
+--text2:#94a3b8;
+
+--border:rgba(255,255,255,.08);
+
+--radius:22px;
+
+}
+
+/* ===========================================
+   Reset
+=========================================== */
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+
+}
+
+body{
+
+background:#030712;
+
+font-family:"Poppins",sans-serif;
+
+color:white;
+
+overflow-x:hidden;
+
+}
+
+/* ===========================================
+   Dashboard
+=========================================== */
+
+.coach-dashboard{
+
+min-height:100vh;
+
+padding:40px;
+
+background:
+
+radial-gradient(circle at top left,#1d4ed822,transparent 30%),
+
+radial-gradient(circle at bottom right,#2563eb22,transparent 35%),
+
+linear-gradient(180deg,#020617,#111827);
+
+}
+
+/* ===========================================
+   Header
+=========================================== */
+
+.coach-header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:40px;
+
+}
+
+.coach-header h1{
+
+font-size:34px;
+
+font-weight:700;
+
+color:white;
+
+}
+
+.coach-header p{
+
+margin-top:10px;
+
+color:var(--text2);
+
+}
+
+/* ===========================================
+   Logout
+=========================================== */
+
+.logout-btn{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+padding:14px 24px;
+
+background:linear-gradient(135deg,#ef4444,#dc2626);
+
+border:none;
+
+border-radius:14px;
+
+color:white;
+
+cursor:pointer;
+
+font-size:15px;
+
+font-weight:600;
+
+transition:.35s;
+
+}
+
+.logout-btn:hover{
+
+transform:translateY(-4px);
+
+box-shadow:
+
+0 15px 35px rgba(239,68,68,.35);
+
+}
+
+/* ===========================================
+   Profile Card
+=========================================== */
+
+.coach-profile-card{
+
+display:flex;
+
+align-items:center;
+
+gap:35px;
+
+padding:35px;
+
+margin-bottom:40px;
+
+background:var(--card);
+
+backdrop-filter:blur(18px);
+
+border:1px solid var(--border);
+
+border-radius:24px;
+
+transition:.4s;
+
+}
+
+.coach-profile-card:hover{
+
+transform:translateY(-6px);
+
+border-color:#3b82f6;
+
+box-shadow:
+
+0 20px 50px rgba(59,130,246,.18);
+
+}
+
+/* ===========================================
+   Avatar
+=========================================== */
+
+.avatar{
+
+width:140px;
+
+height:140px;
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:
+
+linear-gradient(135deg,#2563eb,#60a5fa);
+
+box-shadow:
+
+0 0 35px rgba(59,130,246,.5);
+
+flex-shrink:0;
+
+}
+
+.avatar svg{
+
+width:65px;
+
+height:65px;
+
+color:white;
+
+}
+
+/* ===========================================
+   Coach Details
+=========================================== */
+
+.coach-details{
+
+flex:1;
+
+}
+
+.coach-details h2{
+
+font-size:30px;
+
+font-weight:700;
+
+margin-bottom:10px;
+
+}
+
+.coach-details p{
+
+margin-top:14px;
+
+color:var(--text2);
+
+font-size:15px;
+
+}
+
+.coach-details strong{
+
+color:white;
+
+}
+
+/* ===========================================
+   Status
+=========================================== */
+
+.status{
+
+display:inline-flex;
+
+align-items:center;
+
+padding:8px 18px;
+
+margin-top:5px;
+
+background:#16a34a22;
+
+border:1px solid #22c55e55;
+
+color:#4ade80;
+
+border-radius:30px;
+
+font-size:13px;
+
+font-weight:600;
+
+text-transform:capitalize;
+
+}
+
+/* ===========================================
+   Loading
+=========================================== */
+
+.coach-loading{
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:26px;
+
+font-weight:700;
+
+color:white;
+
+}
+
+/* ===========================================
+   Statistics Grid
+=========================================== */
+
+.stats-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+
+gap:28px;
+
+margin-bottom:45px;
+
+}
+
+/* ===========================================
+   Statistic Card
+=========================================== */
+
+.stat-card{
+
+position:relative;
+
+overflow:hidden;
+
+padding:30px;
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:24px;
+
+cursor:pointer;
+
+transition:.4s;
+
+}
+
+.stat-card:hover{
+
+transform:translateY(-10px);
+
+border-color:#3b82f6;
+
+box-shadow:
+
+0 25px 50px rgba(59,130,246,.22);
+
+}
+
+/* ===========================================
+   Animated Border
+=========================================== */
+
+.stat-card::before{
+
+content:"";
+
+position:absolute;
+
+left:-100%;
+
+top:0;
+
+width:100%;
+
+height:4px;
+
+background:
+
+linear-gradient(90deg,
+
+transparent,
+
+#3b82f6,
+
+#60a5fa,
+
+transparent);
+
+transition:.7s;
+
+}
+
+.stat-card:hover::before{
+
+left:100%;
+
+}
+
+/* ===========================================
+   Glowing Circle
+=========================================== */
+
+.stat-card::after{
+
+content:"";
+
+position:absolute;
+
+width:160px;
+
+height:160px;
+
+background:#2563eb22;
+
+border-radius:50%;
+
+top:-70px;
+
+right:-70px;
+
+filter:blur(20px);
+
+}
+
+/* ===========================================
+   Icons
+=========================================== */
+
+.stat-card svg{
+
+width:60px;
+
+height:60px;
+
+padding:14px;
+
+border-radius:18px;
+
+background:
+
+linear-gradient(135deg,
+
+#2563eb,
+
+#60a5fa);
+
+color:white;
+
+box-shadow:
+
+0 0 25px rgba(59,130,246,.35);
+
+margin-bottom:22px;
+
+transition:.4s;
+
+}
+
+.stat-card:hover svg{
+
+transform:
+
+rotate(-8deg)
+
+scale(1.15);
+
+}
+
+/* ===========================================
+   Numbers
+=========================================== */
+
+.stat-card h3{
+
+font-size:38px;
+
+font-weight:700;
+
+color:white;
+
+margin-bottom:10px;
+
+}
+
+/* ===========================================
+   Labels
+=========================================== */
+
+.stat-card p{
+
+font-size:15px;
+
+letter-spacing:.5px;
+
+color:#94a3b8;
+
+}
+
+/* ===========================================
+   Different Glow Colors
+=========================================== */
+
+.stat-card:nth-child(1) svg{
+
+background:
+
+linear-gradient(
+
+135deg,
+
+#3b82f6,
+
+#2563eb);
+
+}
+
+.stat-card:nth-child(2) svg{
+
+background:
+
+linear-gradient(
+
+135deg,
+
+#22c55e,
+
+#16a34a);
+
+}
+
+.stat-card:nth-child(3) svg{
+
+background:
+
+linear-gradient(
+
+135deg,
+
+#f59e0b,
+
+#f97316);
+
+}
+
+.stat-card:nth-child(4) svg{
+
+background:
+
+linear-gradient(
+
+135deg,
+
+#8b5cf6,
+
+#7c3aed);
+
+}
+
+/* ===========================================
+   Floating Animation
+=========================================== */
+
+.stat-card{
+
+animation:floatCard 5s ease-in-out infinite;
+
+}
+
+.stat-card:nth-child(2){
+
+animation-delay:.3s;
+
+}
+
+.stat-card:nth-child(3){
+
+animation-delay:.6s;
+
+}
+
+.stat-card:nth-child(4){
+
+animation-delay:.9s;
+
+}
+
+@keyframes floatCard{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-6px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ===========================================
+   Counter Animation Effect
+=========================================== */
+
+.stat-card h3{
+
+animation:fadeUp .8s ease;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(25px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+/* ===========================================
+   Quick Actions
+=========================================== */
+
+.quick-actions{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+gap:28px;
+
+margin-top:15px;
+
+}
+
+/* ===========================================
+   Action Card
+=========================================== */
+
+.action-card{
+
+position:relative;
+
+overflow:hidden;
+
+padding:35px 25px;
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:24px;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+justify-content:center;
+
+cursor:pointer;
+
+transition:.4s;
+
+min-height:220px;
+
+}
+
+/* ===========================================
+   Glow Background
+=========================================== */
+
+.action-card::before{
+
+content:"";
+
+position:absolute;
+
+width:260px;
+
+height:260px;
+
+background:radial-gradient(circle,#3b82f633,transparent 70%);
+
+top:-140px;
+
+right:-120px;
+
+transition:.4s;
+
+}
+
+.action-card:hover::before{
+
+transform:scale(1.4);
+
+}
+
+/* ===========================================
+   Animated Border
+=========================================== */
+
+.action-card::after{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+padding:1px;
+
+border-radius:24px;
+
+background:linear-gradient(
+135deg,
+transparent,
+rgba(59,130,246,.7),
+transparent);
+
+-webkit-mask:
+linear-gradient(#fff 0 0) content-box,
+linear-gradient(#fff 0 0);
+
+-webkit-mask-composite:xor;
+
+mask-composite:exclude;
+
+opacity:0;
+
+transition:.35s;
+
+}
+
+.action-card:hover::after{
+
+opacity:1;
+
+}
+
+/* ===========================================
+   Hover
+=========================================== */
+
+.action-card:hover{
+
+transform:translateY(-12px);
+
+box-shadow:
+
+0 30px 60px rgba(59,130,246,.20);
+
+border-color:#3b82f6;
+
+}
+
+/* ===========================================
+   Icon
+=========================================== */
+
+.action-card svg{
+
+width:72px;
+
+height:72px;
+
+padding:18px;
+
+border-radius:22px;
+
+background:linear-gradient(
+135deg,
+#2563eb,
+#60a5fa);
+
+color:white;
+
+margin-bottom:25px;
+
+box-shadow:
+
+0 0 30px rgba(59,130,246,.40);
+
+transition:.35s;
+
+z-index:2;
+
+}
+
+.action-card:hover svg{
+
+transform:
+
+scale(1.15)
+
+rotate(-8deg);
+
+}
+
+/* ===========================================
+   Title
+=========================================== */
+
+.action-card h3{
+
+font-size:22px;
+
+font-weight:600;
+
+text-align:center;
+
+color:white;
+
+z-index:2;
+
+}
+
+/* ===========================================
+   Different Icon Colors
+=========================================== */
+
+.action-card:nth-child(1) svg{
+
+background:linear-gradient(
+135deg,
+#3b82f6,
+#2563eb);
+
+}
+
+.action-card:nth-child(2) svg{
+
+background:linear-gradient(
+135deg,
+#22c55e,
+#16a34a);
+
+}
+
+.action-card:nth-child(3) svg{
+
+background:linear-gradient(
+135deg,
+#8b5cf6,
+#7c3aed);
+
+}
+
+.action-card:nth-child(4) svg{
+
+background:linear-gradient(
+135deg,
+#f59e0b,
+#ea580c);
+
+}
+
+/* ===========================================
+   Floating Effect
+=========================================== */
+
+.action-card{
+
+animation:floatAction 6s ease-in-out infinite;
+
+}
+
+.action-card:nth-child(2){
+
+animation-delay:.4s;
+
+}
+
+.action-card:nth-child(3){
+
+animation-delay:.8s;
+
+}
+
+.action-card:nth-child(4){
+
+animation-delay:1.2s;
+
+}
+
+@keyframes floatAction{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-8px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ===========================================
+   Shine Effect
+=========================================== */
+
+.action-card .shine{
+
+display:none;
+
+}
+
+.action-card:hover{
+
+background:
+
+linear-gradient(
+135deg,
+rgba(59,130,246,.10),
+rgba(255,255,255,.06));
+
+}
+
+/* ===========================================
+   Smooth Page Animation
+=========================================== */
+
+.coach-dashboard{
+
+animation:pageFade .8s ease;
+
+}
+
+@keyframes pageFade{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ===========================================
+   Selection Color
+=========================================== */
+
+::selection{
+
+background:#3b82f6;
+
+color:#fff;
+
+}
+
+/* ===========================================
+   Custom Scrollbar
+=========================================== */
+
+::-webkit-scrollbar{
+
+width:10px;
+
+height:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#0f172a;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:linear-gradient(
+180deg,
+#2563eb,
+#60a5fa);
+
+border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:#3b82f6;
+
+}
+
+/* Firefox */
+
+*{
+
+scrollbar-width:thin;
+
+scrollbar-color:#3b82f6 #0f172a;
+
+}
+
+/* ===========================================
+   Decorative Background Glow
+=========================================== */
+
+.coach-dashboard::before{
+
+content:"";
+
+position:fixed;
+
+top:-180px;
+
+left:-180px;
+
+width:420px;
+
+height:420px;
+
+background:#2563eb18;
+
+border-radius:50%;
+
+filter:blur(90px);
+
+pointer-events:none;
+
+z-index:-1;
+
+}
+
+.coach-dashboard::after{
+
+content:"";
+
+position:fixed;
+
+bottom:-200px;
+
+right:-200px;
+
+width:500px;
+
+height:500px;
+
+background:#7c3aed18;
+
+border-radius:50%;
+
+filter:blur(100px);
+
+pointer-events:none;
+
+z-index:-1;
+
+}
+
+/* ===========================================
+   Focus States
+=========================================== */
+
+button:focus-visible{
+
+outline:2px solid #3b82f6;
+
+outline-offset:3px;
+
+}
+
+/* ===========================================
+   Responsive (Tablet)
+=========================================== */
+
+@media (max-width:992px){
+
+.coach-dashboard{
+
+padding:25px;
+
+}
+
+.coach-header{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:18px;
+
+}
+
+.coach-profile-card{
+
+flex-direction:column;
+
+text-align:center;
+
+gap:24px;
+
+}
+
+.avatar{
+
+width:120px;
+
+height:120px;
+
+}
+
+.avatar svg{
+
+width:56px;
+
+height:56px;
+
+}
+
+.stats-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.quick-actions{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+/* ===========================================
+   Responsive (Mobile)
+=========================================== */
+
+@media (max-width:768px){
+
+.coach-dashboard{
+
+padding:18px;
+
+}
+
+.coach-header h1{
+
+font-size:28px;
+
+}
+
+.logout-btn{
+
+width:100%;
+
+justify-content:center;
+
+}
+
+.coach-profile-card{
+
+padding:24px;
+
+}
+
+.coach-details h2{
+
+font-size:24px;
+
+}
+
+.coach-details p{
+
+font-size:14px;
+
+}
+
+.stats-grid{
+
+grid-template-columns:1fr;
+
+gap:20px;
+
+}
+
+.quick-actions{
+
+grid-template-columns:1fr;
+
+gap:20px;
+
+}
+
+.stat-card{
+
+padding:24px;
+
+}
+
+.action-card{
+
+min-height:180px;
+
+padding:28px 20px;
+
+}
+
+.action-card svg{
+
+width:64px;
+
+height:64px;
+
+padding:16px;
+
+}
+
+.action-card h3{
+
+font-size:20px;
+
+}
+
+}
+
+/* ===========================================
+   Small Phones
+=========================================== */
+
+@media (max-width:480px){
+
+.coach-dashboard{
+
+padding:15px;
+
+}
+
+.coach-header h1{
+
+font-size:24px;
+
+}
+
+.coach-header p{
+
+font-size:14px;
+
+}
+
+.avatar{
+
+width:100px;
+
+height:100px;
+
+}
+
+.avatar svg{
+
+width:46px;
+
+height:46px;
+
+}
+
+.coach-details h2{
+
+font-size:22px;
+
+}
+
+.status{
+
+font-size:12px;
+
+padding:6px 14px;
+
+}
+
+.stat-card h3{
+
+font-size:32px;
+
+}
+
+}
+
+/* ===========================================
+   Reduced Motion Support
+=========================================== */
+
+@media (prefers-reduced-motion:reduce){
+
+*,
+*::before,
+*::after{
+
+animation:none !important;
+
+transition:none !important;
+
+scroll-behavior:auto !important;
+
+}
+
+}

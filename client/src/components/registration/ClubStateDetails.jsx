@@ -37,6 +37,14 @@ function ClubStateDetails({ formData, setFormData }) {
 
         <input
           type="text"
+          name="district"
+          placeholder="District"
+          value={formData.district}
+          onChange={handleChange}
+        />
+
+        <input
+          type="text"
           name="representingState"
           placeholder="Representing State"
           value={formData.representingState}

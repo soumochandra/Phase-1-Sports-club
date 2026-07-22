@@ -481,6 +481,78 @@
 }
 
 /* ========================================
+   CONSENT / PAYMENT UI
+======================================== */
+
+.consent-card,
+.payment-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.checkbox-row,
+.payment-method-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 18px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.checkbox-row {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.checkbox-row input {
+  margin-top: 2px;
+}
+
+.info-banner,
+.payment-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 16px;
+  border: 1px solid rgba(35, 136, 255, 0.25);
+  border-radius: 14px;
+  background: rgba(35, 136, 255, 0.08);
+  color: var(--primary-light);
+}
+
+.payment-box strong {
+  display: block;
+  margin-bottom: 4px;
+  color: white;
+}
+
+.payment-box span {
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.payment-method-group span {
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.payment-method-group select {
+  width: 100%;
+  padding: 14px 15px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.035);
+  color: var(--text-primary);
+}
+
+/* ========================================
    ERROR MESSAGE
 ======================================== */
 

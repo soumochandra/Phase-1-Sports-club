@@ -16,6 +16,8 @@ import AddressDetails from "../components/registration/AddressDetails";
 import ClubStateDetails from "../components/registration/ClubStateDetails";
 import CompetitionDetails from "../components/registration/CompetitionDetails";
 import DocumentUpload from "../components/registration/DocumentUpload";
+import DeclarationDetails from "../components/registration/DeclarationDetails";
+import PaymentDetails from "../components/registration/PaymentDetails";
 
 import api from "../services/api";
 import { validateStep } from "../utils/validation";
@@ -41,26 +43,47 @@ function AthleteRegistration() {
     age: "",
     ageGroup: "",
     gender: "",
+    bloodGroup: "",
     mobile: "",
     email: "",
 
     guardianName: "",
     guardianMobile: "",
     guardianRelation: "",
+    guardianEmail: "",
 
     addressLine: "",
     city: "",
     state: "",
+    country: "India",
     pinCode: "",
 
     clubName: "",
+    district: "",
     representingState: "",
 
     competitionApplied: "",
+    category: "",
+    eventLevel: "",
 
     profileImage: null,
     birthCertificate: null,
     identityDocument: null,
+    schoolBonafideCertificate: null,
+    insuranceDocument: null,
+
+    declarationConfirmed: false,
+    termsAccepted: false,
+    parentConsent: false,
+
+    paymentMethod: "",
+    paymentStatus: "pending",
+    insuranceProvider: "",
+    insurancePolicyNumber: "",
+    insuranceValidTill: "",
+
+    portalPassword: "",
+    confirmPassword: "",
   });
 
   const nextStep = () => {
@@ -76,7 +99,7 @@ function AthleteRegistration() {
 
     setError("");
 
-    if (currentStep < 6) {
+    if (currentStep < 8) {
       setCurrentStep((previousStep) => previousStep + 1);
     }
   };
@@ -90,7 +113,7 @@ function AthleteRegistration() {
   };
 
   const handleSubmit = async () => {
-    const validationError = validateStep(6, formData);
+    const validationError = validateStep(8, formData);
 
     if (validationError) {
       setError(validationError);
@@ -103,24 +126,37 @@ function AthleteRegistration() {
 
       const registrationData = new FormData();
 
-      Object.entries(formData).forEach(([key, value]) => {
-        if (
-          key !== "age" &&
-          key !== "ageGroup" &&
-          value !== null
-        ) {
-          registrationData.append(key, value);
-        }
-      });
+    Object.entries(formData).forEach(([key, value]) => {
+  if (
+    key !== "age" &&
+    key !== "ageGroup" &&
+    key !== "confirmPassword" &&
+    value !== null
+  ) {
+    registrationData.append(key, value);
+  }
+});
 
-      const response = await api.post(
-        "/athletes/register",
-        registrationData
-      );
+const response = await api.post(
+  "/athletes/register",
+  registrationData
+);
+
+alert(JSON.stringify(response.data, null, 2));
+
+      const registration = response.data?.data ?? response.data;
+
+      if (!registration?.portalUserId || !registration?.portalPassword) {
+        throw new Error(
+          "Registration succeeded, but portal credentials were not returned. Please contact the administrator."
+        );
+      }
 
       navigate("/registration-success", {
         state: {
-          athleteId: response.data.athleteId,
+          athleteId: registration.athleteId,
+          portalUserId: registration.portalUserId,
+          portalPassword: registration.portalPassword,
         },
       });
     } catch (submitError) {
@@ -128,6 +164,7 @@ function AthleteRegistration() {
 
       setError(
         submitError.response?.data?.message ||
+          submitError.message ||
           "Registration failed. Please try again."
       );
     } finally {
@@ -186,6 +223,12 @@ function AthleteRegistration() {
           />
         );
 
+      case 7:
+        return <DeclarationDetails formData={formData} setFormData={setFormData} />;
+
+      case 8:
+        return <PaymentDetails formData={formData} setFormData={setFormData} />;
+
       default:
         return null;
     }
@@ -236,10 +279,10 @@ function AthleteRegistration() {
             </button>
 
             <span className="step-counter">
-              Step {currentStep} of 6
+              Step {currentStep} of 8
             </span>
 
-            {currentStep < 6 ? (
+            {currentStep < 8 ? (
               <button
                 type="button"
                 className="primary-button next-button"

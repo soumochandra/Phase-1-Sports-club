@@ -44,6 +44,14 @@ function AddressDetails({ formData, setFormData }) {
 
         <input
           type="text"
+          name="country"
+          placeholder="Country"
+          value={formData.country}
+          onChange={handleChange}
+        />
+
+        <input
+          type="text"
           name="pinCode"
           placeholder="6 Digit PIN Code"
           maxLength="6"
